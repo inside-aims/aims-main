@@ -8,7 +8,7 @@ const Layout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <div className="relative  min-h-screen">
+    <div className="relative  min-h-screen px-28">
       {children}
       <Particles
         className="absolute inset-0"
