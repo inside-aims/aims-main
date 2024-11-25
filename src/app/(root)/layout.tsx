@@ -4,6 +4,7 @@ import { useTheme } from "next-themes";
 import React, { useEffect, useState } from "react";
 
 import Particles from "@/components/ui/particles";
+import FloatingDockDemo from "@/components/shared/navigation/floating-dock";
 
 const Layout = ({
   children,
@@ -27,6 +28,7 @@ const Layout = ({
         color={color}
         refresh
       />
+      <FloatingDockDemo/>
     </div>
   );
 };
