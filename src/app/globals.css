@@ -296,9 +296,10 @@ body {
 
   .dark-gradient {
     background: linear-gradient(
-      232deg,
-      rgba(23, 28, 35, 0.41) 0%,
-      rgba(19, 22, 28, 0.7) 100%
+      90deg,
+       rgba(27, 31, 28, 0.41) 0%,
+      rgba(9, 13, 10, 0.51) 40%,
+      rgba(3, 8, 5, 0.7) 100%
     );
   }
 }

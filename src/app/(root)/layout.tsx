@@ -18,7 +18,7 @@ const Layout = ({
   }, [resolvedTheme]);
 
   return (
-    <div className="relative  min-h-screen px-28 pt-24">
+    <div className="relative  min-h-screen px-10 md:px-28 pt-24">
       {children}
       <Particles
         className="absolute inset-0"

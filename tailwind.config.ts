@@ -4,6 +4,10 @@ import type { Config } from "tailwindcss";
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const { nextui } = require("@nextui-org/theme");
 
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
+
 export default {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -69,5 +73,18 @@ export default {
   },
   darkMode: ["class"],
   // eslint-disable-next-line @typescript-eslint/no-require-imports
-  plugins: [nextui(), require("tailwindcss-animate")],
+  plugins: [nextui(), require("tailwindcss-animate"),addVariablesForColors],
 } satisfies Config;
+
+
+// This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
+function addVariablesForColors({ addBase, theme }: any) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+ 
+  addBase({
+    ":root": newVars,
+  });
+}
