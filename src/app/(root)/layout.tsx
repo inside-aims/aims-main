@@ -3,8 +3,8 @@
 import { useTheme } from "next-themes";
 import React, { useEffect, useState } from "react";
 
-import Particles from "@/components/ui/particles";
 import FloatingDockDemo from "@/components/shared/navigation/floating-dock";
+import Particles from "@/components/ui/particles";
 
 const Layout = ({
   children,
@@ -19,7 +19,7 @@ const Layout = ({
   }, [resolvedTheme]);
 
   return (
-    <div className="relative  min-h-screen px-10 md:px-28 pt-24">
+    <div className="relative  min-h-screen pt-24 px-2 sm:px-5 lg:px-28">
       {children}
       <Particles
         className="absolute inset-0"
@@ -28,7 +28,7 @@ const Layout = ({
         color={color}
         refresh
       />
-      <FloatingDockDemo/>
+      <FloatingDockDemo />
     </div>
   );
 };

@@ -1,8 +1,13 @@
-import type { Config } from "tailwindcss"
+/* eslint-disable @typescript-eslint/no-require-imports */
+const { nextui } = require("@nextui-org/theme");
+const svgToDataUri = require("mini-svg-data-uri");
+
+// eslint-disable-next-line import/first
+import type { Config } from "tailwindcss";
+
+
 
 // eslint-disable-next-line @typescript-eslint/no-require-imports
-const { nextui } = require("@nextui-org/theme");
-
 const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
@@ -22,7 +27,7 @@ export default {
       padding: "2rem",
       screens: {
         "2xl": "1400px",
-         xs: "420px"
+        xs: "420px",
       },
     },
     extend: {
@@ -65,7 +70,7 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        rainbow: "rainbow var(--speed, 2s) infinite linear"
+        rainbow: "rainbow var(--speed, 2s) infinite linear",
       },
       keyframes: {
         "accordion-down": {
@@ -82,24 +87,41 @@ export default {
           },
           "100%": {
             "background-position": "200%",
-          },  
+          },
+        },
       },
     },
-    
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    plugins: [
+      nextui(),
+      require("tailwindcss-animate"),
+      addVariablesForColors,
+      function ({ matchUtilities, theme }: unknown) {
+        matchUtilities(
+          {
+            "bg-dot-thick": (value: unknown) => ({
+              backgroundImage: `url("${svgToDataUri(
+                `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none"><circle fill="${value}" id="pattern-circle" cx="10" cy="10" r="2.5"></circle></svg>`
+              )}")`,
+            }),
+          },
+          {
+            values: flattenColorPalette(theme("backgroundColor")),
+            type: "color",
+          }
+        );
+      },
+    ],
   },
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  plugins: [nextui(),require("tailwindcss-animate"),addVariablesForColors],
-}
 } satisfies Config;
-
 
 // This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
 function addVariablesForColors({ addBase, theme }: any) {
-  let allColors = flattenColorPalette(theme("colors"));
-  let newVars = Object.fromEntries(
+  const allColors = flattenColorPalette(theme("colors"));
+  const newVars = Object.fromEntries(
     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
   );
- 
+
   addBase({
     ":root": newVars,
   });
