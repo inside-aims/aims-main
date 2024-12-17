@@ -11,7 +11,25 @@ import { Theme } from "./Theme-toggler";
 
 const Navbar = () => {
   return (
-    <NavbarUI className=" background-dark400_light900 mb-10 rounded-md shadow-light-200">
+    <NavbarUI
+      classNames={{
+        item: [
+          "flex",
+          "relative",
+          "h-full",
+          "items-center",
+          "data-[active=true]:after:content-['']",
+          "data-[active=true]:after:absolute",
+          "data-[active=true]:after:bottom-0",
+          "data-[active=true]:after:left-0",
+          "data-[active=true]:after:right-0",
+          "data-[active=true]:after:h-[2px]",
+          "data-[active=true]:after:rounded-[2px]",
+          "data-[active=true]:after:bg-red-400",
+        ],
+      }}
+      className=" light-gradient dark:dark-gradient mb-10 rounded-md shadow-light-200"
+    >
       <NavbarBrand>
         <Image
           src="/assets/images/AIMS.png"
@@ -23,17 +41,17 @@ const Navbar = () => {
       <NavbarContent className="hidden gap-4 sm:flex" justify="center">
         <NavbarItem>
           <Link color="foreground" href="#">
-            Features
+            Home
           </Link>
         </NavbarItem>
         <NavbarItem isActive>
           <Link href="#" aria-current="page">
-            Customers
+            Projects
           </Link>
         </NavbarItem>
         <NavbarItem>
           <Link color="foreground" href="#">
-            Integrations
+            About
           </Link>
         </NavbarItem>
       </NavbarContent>
