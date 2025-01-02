@@ -1,13 +1,14 @@
-import { Button } from "@nextui-org/button";
 
+import FeaturedSection from "@/components/hocs/Home/FeaturedSection/features-section-demo-3";
 import HeroSection from "@/components/hocs/Home/HeroSection";
-import Navbar from "@/components/shared/navigation/navbar";
+import InnovationSection from "@/components/hocs/Home/InnovationSection";
 
 export default function Home() {
   return (
     <main className="">
-      <Navbar />
       <HeroSection />
+      <FeaturedSection/>
+      <InnovationSection/>
     </main>
   );
 }
