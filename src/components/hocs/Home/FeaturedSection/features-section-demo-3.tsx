@@ -1,3 +1,5 @@
+"use client";
+
 import { IconBrandYoutubeFilled } from "@tabler/icons-react";
 import createGlobe from "cobe";
 import { motion } from "framer-motion";
@@ -5,51 +7,57 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 
+import GradualSpacing from "@/components/ui/gradual-spacing";
 import { cn } from "@/lib/utils";
 
-export default function FeaturesSectionDemo() {
+import { SkeletonOne } from "./SkeletonOne";
+
+export default function FeaturedSection() {
   const features = [
     {
-      title: "Track issues effectively",
+      title: "Sharing with the community",
       description:
-        "Track and manage your project issues with ease using our intuitive interface.",
+        "Share your thoughts and experiences with milliions of users anonymously ",
       skeleton: <SkeletonOne />,
       className:
         "col-span-1 lg:col-span-4 border-b lg:border-r dark:border-neutral-800",
     },
     {
-      title: "Capture pictures with AI",
+      title: "Gain Expert help",
       description:
-        "Capture stunning photos effortlessly using our advanced AI technology.",
+        "Not only about connecting and having fun but also gaining expert help and advice.",
       skeleton: <SkeletonTwo />,
       className: "border-b col-span-1 lg:col-span-2 dark:border-neutral-800",
     },
+    // {
+    //   title: "Watch our AI on YouTube",
+    //   description:
+    //     "Whether its you or Tyler Durden, can get to know about our product on YouTube",
+    //   skeleton: <SkeletonThree />,
+    //   className:
+    //     "col-span-1 lg:col-span-3 lg:border-r  dark:border-neutral-800",
+    // },
     {
-      title: "Watch our AI on YouTube",
+      title: "Connecting diverse users around the world",
       description:
-        "Whether its you or Tyler Durden, can get to know about our product on YouTube",
-      skeleton: <SkeletonThree />,
-      className:
-        "col-span-1 lg:col-span-3 lg:border-r  dark:border-neutral-800",
-    },
-    {
-      title: "Deploy in seconds",
-      description:
-        "With our blazing fast, state of the art, cutting edge, we are so back cloud servies (read AWS) - you can deploy your model in seconds.",
+        "Build meaningful connections in a supportive, inclusive digital environment.",
       skeleton: <SkeletonFour />,
-      className: "col-span-1 lg:col-span-3 border-b lg:border-none",
+      className: "col-span-1 lg:col-span-6 border-b lg:border-none",
     },
   ];
   return (
-    <div className="relative z-20 mx-auto max-w-7xl py-10 lg:py-40">
+    <div className="relative z-20 mx-auto mb-20 max-w-7xl py-10 lg:py-40">
       <div className="px-8">
-        <h4 className="mx-auto max-w-5xl text-center text-3xl font-medium tracking-tight text-black dark:text-white lg:text-5xl lg:leading-tight">
-          Packed with thousands of features
-        </h4>
+        <GradualSpacing
+          className="mx-auto max-w-5xl text-center text-4xl font-medium tracking-tight text-black dark:text-white sm:text-3xl lg:text-5xl lg:leading-tight "
+          text="Innovating Connections, Building Safe Spaces"
+        />
 
-        <p className="mx-auto my-4  max-w-2xl text-center text-sm font-normal text-neutral-500 dark:text-neutral-300 lg:text-base">
-          From Image generation to video generation, Everything AI has APIs for
-          literally everything. It can even create this website copy for you.
+        <p className="mx-auto my-4  max-w-2xl text-center text-sm font-normal text-neutral-500 dark:text-neutral-400 lg:text-base">
+          At AIMS, we are dedicated to crafting groundbreaking solutions like
+          Xolace to empower people, foster connections, and create spaces where
+          everyone feels seen and heard. Our commitment to innovation drives
+          everything we do.
         </p>
       </div>
 
@@ -101,28 +109,6 @@ const FeatureDescription = ({ children }: { children?: React.ReactNode }) => {
     >
       {children}
     </p>
-  );
-};
-
-export const SkeletonOne = () => {
-  return (
-    <div className="relative flex h-full gap-10 px-2 py-8">
-      <div className="group  mx-auto size-full bg-white p-5 shadow-2xl dark:bg-neutral-900">
-        <div className="flex size-full flex-1 flex-col space-y-2">
-          {/* TODO */}
-          <Image
-            src="/linear.webp"
-            alt="header"
-            width={800}
-            height={800}
-            className="aspect-square size-full rounded-sm object-cover object-left-top"
-          />
-        </div>
-      </div>
-
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-40 h-60 w-full bg-gradient-to-t from-white via-white to-transparent dark:from-black dark:via-black" />
-      <div className="pointer-events-none absolute inset-x-0 top-0 z-40 h-60 w-full bg-gradient-to-b from-white via-transparent to-transparent dark:from-black" />
-    </div>
   );
 };
 

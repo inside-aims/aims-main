@@ -12,7 +12,7 @@ const HeroSection = () => {
   return (
     <HeroHighlight
       className="grid-cols-3 md:grid"
-      containerClassName=" rounded-lg max-sm:dark:bg-transparent bg-transparent"
+      containerClassName=" rounded-lg max-sm:dark:bg-transparent max-sm:bg-transparent mb-16 sm:mb-10"
     >
       <div className="col-span-2 flex flex-col justify-center max-sm:mb-10">
         <motion.h1
