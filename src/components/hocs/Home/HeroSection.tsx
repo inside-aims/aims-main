@@ -12,9 +12,9 @@ const HeroSection = () => {
   return (
     <HeroHighlight
       className="grid-cols-3 md:grid"
-      containerClassName=" rounded-lg "
+      containerClassName=" rounded-lg max-sm:dark:bg-transparent bg-transparent"
     >
-      <div className="col-span-2 flex flex-col justify-center ">
+      <div className="col-span-2 flex flex-col justify-center max-sm:mb-10">
         <motion.h1
           initial={{
             opacity: 0,
@@ -28,7 +28,7 @@ const HeroSection = () => {
             duration: 0.5,
             ease: [0.4, 0.0, 0.2, 1],
           }}
-          className=" mx-auto flex max-w-4xl items-center px-4 text-center text-3xl font-bold leading-relaxed text-neutral-700 dark:text-white md:mb-0 md:text-4xl lg:text-5xl lg:leading-snug"
+          className=" mx-auto flex max-w-4xl items-center px-4 text-center text-4xl font-bold leading-relaxed text-neutral-700 dark:text-white md:mb-0 md:text-4xl lg:text-5xl lg:leading-snug"
         >
           <span>
             Atlas Innovation & Meta Solutions
@@ -37,7 +37,7 @@ const HeroSection = () => {
             </Highlight>
           </span>
         </motion.h1>
-        <p className=" mt-5 text-center text-lg text-gray-400">
+        <p className=" mt-2 text-center text-lg text-gray-400 sm:mt-5">
           Crafting cutting-edge solutions for the digital age
         </p>
       </div>

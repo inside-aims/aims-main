@@ -20,7 +20,7 @@ const Layout = ({
   }, [resolvedTheme]);
 
   return (
-    <div className="relative  min-h-screen px-2 pt-32 sm:px-5 lg:px-28">
+    <div className="relative  min-h-screen px-2 pt-36 sm:px-5 lg:px-28">
       <Navbar />
       {children}
       <Particles
