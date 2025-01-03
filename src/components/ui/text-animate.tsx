@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
-import { cn } from "@/lib/utils";
 import { AnimatePresence, motion, MotionProps, Variants } from "motion/react";
 import { ElementType } from "react";
+
+import { cn } from "@/lib/utils";
 
 type AnimationType = "text" | "word" | "character" | "line";
 type AnimationVariant =
@@ -314,6 +316,7 @@ export function TextAnimate({
   animation = "fadeIn",
   ...props
 }: TextAnimateProps) {
+  // @ts-expect-error unexpected
   const MotionComponent = motion.create(Component);
 
   // Use provided variants or default variants based on animation type
@@ -374,7 +377,7 @@ export function TextAnimate({
             custom={i * staggerTimings[by]}
             className={cn(
               by === "line" ? "block" : "inline-block whitespace-pre",
-              segmentClassName,
+              segmentClassName
             )}
           >
             {segment}

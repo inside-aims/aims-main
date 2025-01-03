@@ -43,7 +43,7 @@ export const MenuItem = ({
               <motion.div
                 transition={transition}
                 layoutId="active" // layoutId ensures smooth animation
-                className="overflow-hidden rounded-2xl border border-black/[0.2] border-slate-200 bg-white shadow-xl backdrop-blur-sm dark:border-slate-800 dark:border-white/[0.2] dark:bg-black"
+                className="overflow-hidden rounded-2xl border border-black/[0.2]  bg-white shadow-xl backdrop-blur-sm  dark:border-white/[0.2] dark:bg-black"
               >
                 <motion.div
                   layout // layout ensures smooth animation
@@ -70,7 +70,7 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className="shadow-input relative flex justify-between items-center space-x-4 rounded-full border  border-transparent bg-white px-6 py-2 dark:border-white/[0.2]  dark:bg-black"
+      className=" relative flex items-center justify-between space-x-4 rounded-full border  border-transparent bg-white px-6 py-2 dark:border-white/[0.2]  dark:bg-black"
     >
       {children}
     </nav>
@@ -109,6 +109,7 @@ export const ProductItem = ({
   );
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const HoveredLink = ({ children, ...rest }: any) => {
   return (
     <Link
