@@ -1,6 +1,7 @@
-import { cn } from "@/lib/utils";
-import React, { useRef, useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
+import React, { useRef, useEffect, useState } from "react";
+
+import { cn } from "@/lib/utils";
 
 interface ScratchToRevealProps {
   children: React.ReactNode;
@@ -37,7 +38,7 @@ const ScratchToReveal: React.FC<ScratchToRevealProps> = ({
         0,
         0,
         canvas.width,
-        canvas.height,
+        canvas.height
       );
       gradient.addColorStop(0, gradientColors[0]);
       gradient.addColorStop(0.5, gradientColors[1]);
