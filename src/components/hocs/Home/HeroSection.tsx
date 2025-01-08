@@ -11,10 +11,19 @@ const HeroSection = () => {
   };
   return (
     <HeroHighlight
-      className="grid-cols-3 md:grid"
-      containerClassName=" rounded-lg max-sm:dark:bg-transparent max-sm:bg-transparent mb-16 sm:mb-10"
+      className="grid-cols-3 md:grid bg-gray-600"
+      containerClassName="rounded-lg max-sm:dark:bg-transparent max-sm:bg-transparent mb-16 sm:mb-10"
     >
-      <div className="col-span-2 flex flex-col justify-center max-sm:mb-10">
+      <Image
+        src="/assets/images/Hero1.jpg"
+        height={300}
+        width={300}
+        alt="Hroe"
+        className="rounded-lg"
+        objectFit="fill"
+      />
+
+      {/* <div className="col-span-2 flex flex-col justify-center max-sm:mb-10 bg-green-500">
         <motion.h1
           initial={{
             opacity: 0,
@@ -28,7 +37,8 @@ const HeroSection = () => {
             duration: 0.5,
             ease: [0.4, 0.0, 0.2, 1],
           }}
-          className=" mx-auto flex max-w-4xl items-center px-4 text-center text-4xl font-bold leading-relaxed text-neutral-700 dark:text-white md:mb-0 md:text-4xl lg:text-5xl lg:leading-snug"
+          className=" mx-auto flex max-w-4xl items-center px-4 text-center text-4xl font-bold leading-relaxed text-neutral-700
+           dark:text-white md:mb-0 md:text-4xl lg:text-5xl lg:leading-snug rounded-3xl bg-red-500"
         >
           <span>
             Atlas Innovation & Meta Solutions
@@ -59,7 +69,7 @@ const HeroSection = () => {
             className="rounded-lg"
           />
         </ScratchToReveal>
-      </div>
+      </div> */}
     </HeroHighlight>
   );
 };

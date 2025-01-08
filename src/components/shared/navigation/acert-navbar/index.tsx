@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-
+import { motion } from "framer-motion";
 import {
   HoveredLink,
   Menu,
@@ -15,8 +15,24 @@ import { Theme } from "../navbar/Theme-toggler";
 const Navbar = ({ className }: { className?: string }) => {
   const [active, setActive] = useState<string | null>(null);
   return (
-    <div
-      className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
+    <motion.div
+      initial={{
+        y: -10,
+        opacity: 0,
+      }}
+      animate={{
+        y: 0,
+        opacity: 1,
+      }}
+      transition={{
+        delay: 0.7,
+        duration: 0.34,
+      }}
+      typeof="spring"
+      className={cn(
+        "fixed top-3 inset-x-0 max-w-5xl mx-auto z-50 h-5",
+        className
+      )}
     >
       <Menu setActive={setActive}>
         <div>
@@ -78,7 +94,7 @@ const Navbar = ({ className }: { className?: string }) => {
 
         <Theme />
       </Menu>
-    </div>
+    </motion.div>
   );
 };
 
