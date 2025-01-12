@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import {
   HoveredLink,
   Menu,
@@ -29,22 +30,30 @@ const Navbar = ({ className }: { className?: string }) => {
         duration: 0.34,
       }}
       typeof="spring"
-      className={cn(
-        "fixed top-3 inset-x-0 max-w-5xl mx-auto z-50 h-5",
-        className
-      )}
+      className={cn("fixed top-0 inset-x-0 max-w-1xl mx-auto z-50", className)}
     >
       <Menu setActive={setActive}>
-        <div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+        >
           <Image
             src="/assets/images/AIMS.png"
             width={60}
             height={60}
             alt="AIMS logo"
           />
-        </div>
-        <div className="flex space-x-4">
-          <MenuItem setActive={setActive} active={active} item="Services">
+        </motion.div>
+
+        <div className="flex space-x-4 gap-5">
+          <Link href="/">Home</Link>
+          <MenuItem
+            setActive={setActive}
+            active={active}
+            item="Services"
+            wait={0}
+          >
             <div className="flex flex-col space-y-4 text-sm">
               <HoveredLink href="/web-dev">Web Development</HoveredLink>
               <HoveredLink href="/interface-design">
@@ -54,7 +63,12 @@ const Navbar = ({ className }: { className?: string }) => {
               <HoveredLink href="/branding">Branding</HoveredLink>
             </div>
           </MenuItem>
-          <MenuItem setActive={setActive} active={active} item="Products">
+          <MenuItem
+            setActive={setActive}
+            active={active}
+            item="Products"
+            wait={0.5}
+          >
             <div className="  grid grid-cols-2 gap-10 p-4 text-sm">
               <ProductItem
                 title="Algochurn"
@@ -82,7 +96,12 @@ const Navbar = ({ className }: { className?: string }) => {
               />
             </div>
           </MenuItem>
-          <MenuItem setActive={setActive} active={active} item="Pricing">
+          <MenuItem
+            setActive={setActive}
+            active={active}
+            item="Pricing"
+            wait={0.7}
+          >
             <div className="flex flex-col space-y-4 text-sm">
               <HoveredLink href="/hobby">Hobby</HoveredLink>
               <HoveredLink href="/individual">Individual</HoveredLink>
