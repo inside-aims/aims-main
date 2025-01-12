@@ -42,12 +42,21 @@ export function HeroSectionAlternative() {
         transition={{ duration: 1.2 }}
         className="absolute top-0 right-0 w-1/2 h-full"
       >
-        <Image
+        {/* <Image
           src="/assets/images/image-2.jpg"
           alt="Modern building facade"
           width={800}
           height={600}
           className="h-full w-full object-cover"
+        /> */}
+
+        <video
+          src="/assets/images/video-1.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="object-cover w-full h-full"
         />
       </motion.div>
     </motion.div>

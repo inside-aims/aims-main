@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { Video } from "lucide-react";
 
 export function InclusionsSection() {
   const sectionRef = useRef(null);
