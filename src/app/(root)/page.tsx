@@ -12,6 +12,7 @@ export default function Home() {
       <DreamSection />
       <InclusionsSection />
       <InnovationSection />
+      <FeaturedSection />
     </main>
   );
 }

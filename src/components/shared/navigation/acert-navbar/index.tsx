@@ -55,6 +55,7 @@ const Navbar = ({ className }: { className?: string }) => {
             wait={0}
           >
             <div className="flex flex-col space-y-4 text-sm">
+              <HoveredLink href="/Services"> Services</HoveredLink>
               <HoveredLink href="/web-dev">Web Development</HoveredLink>
               <HoveredLink href="/interface-design">
                 Interface Design
@@ -72,7 +73,7 @@ const Navbar = ({ className }: { className?: string }) => {
             <div className="  grid grid-cols-2 gap-10 p-4 text-sm">
               <ProductItem
                 title="Algochurn"
-                href="https://algochurn.com"
+                href="/Products"
                 src="https://assets.aceternity.com/demos/algochurn.webp"
                 description="Prepare for tech interviews like never before."
               />

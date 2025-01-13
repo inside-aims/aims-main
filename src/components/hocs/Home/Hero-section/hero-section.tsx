@@ -1,6 +1,4 @@
 "use client";
-
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 export function HeroSectionAlternative() {
@@ -9,7 +7,7 @@ export function HeroSectionAlternative() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="relative bg-[#1a2942] rounded-3xl overflow-hidden mx-4 lg:mx-8 mt-24"
+      className="relative bg-[#1a2942] rounded-3xl overflow-hidden mx-4 lg:mx-8 mb-24"
     >
       <div className="container mx-auto px-4 py-16 lg:py-24">
         <div className="max-w-2xl">
