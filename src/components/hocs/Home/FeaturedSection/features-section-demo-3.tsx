@@ -95,7 +95,7 @@ export default function FeaturedSection() {
       initial="hidden"
       animate={controls}
       variants={containerVariants}
-      className="relative z-20 mx-auto mb-20 max-w-7xl lg:py-40"
+      className="relative z-20 mx-auto mb-20 max-w-7xl"
     >
       <div className="px-8">
         <GradualSpacing
@@ -210,7 +210,7 @@ const SkeletonTwo = () => {
   ];
 
   return (
-    <div className="relative flex h-full flex-col items-start gap-4 overflow-hidden">
+    <div className="relative flex h-full flex-col items-start gap-4 overflow-hidden ">
       <motion.div
         className="flex flex-wrap justify-center gap-2"
         initial={{ opacity: 0 }}

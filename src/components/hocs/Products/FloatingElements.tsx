@@ -1,7 +1,8 @@
 "use client";
 
 import { motion, MotionValue } from "framer-motion";
-import { useParallax } from "../../../public/hooks/useParallax";
+import { useParallax } from "@/hooks/useParallax";
+
 interface FloatingElementsProps {
   scrollYProgress: MotionValue<number>;
 }

@@ -2,7 +2,6 @@
 
 import { useTheme } from "next-themes";
 import React, { useEffect, useState } from "react";
-
 import Navbar from "@/components/shared/navigation/acert-navbar";
 import FloatingDockDemo from "@/components/shared/navigation/floating-dock";
 import Particles from "@/components/ui/particles";

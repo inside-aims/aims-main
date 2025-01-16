@@ -53,7 +53,7 @@ const ServicesPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen text-white">
       {/* Hero Section */}
       <section className="relative overflow-hidden px-6 pt-16 lg:px-8">
         <motion.div
@@ -174,7 +174,7 @@ const ServicesPage = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="border-t border-gray-800 bg-black/50">
+      <section className="border-t border-gray-800 ">
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
