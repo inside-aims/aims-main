@@ -37,7 +37,7 @@ export function InclusionsSection() {
               integrations.
             </p>
             <motion.div whileHover={{ rotate: 2 }} whileTap={{ scale: 0.95 }}>
-              <Button variant="secondary" className="mt-4">
+              <Button variant="secondary" className="mt-4 bg-black">
                 View Inclusions
               </Button>
             </motion.div>

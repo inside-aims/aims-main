@@ -93,7 +93,7 @@ export default function ProductsShowcase() {
         animate="visible"
         variants={titleVariants}
       >
-        <h1 className="text-center text-8xl font-bold tracking-tight text-[#E8D5C4] font-serif">
+        <h1 className="text-center text-8xl font-bold tracking-tight dark:text-[#E8D5C4] text-[#E8D5C4] font-serif">
           {"Our Products".split("").map((letter, index) => (
             <motion.span
               key={index}

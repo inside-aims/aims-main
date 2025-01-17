@@ -3,8 +3,8 @@
 import { useTheme } from "next-themes";
 import React, { useEffect, useState } from "react";
 import Navbar from "@/components/shared/navigation/acert-navbar";
-import FloatingDockDemo from "@/components/shared/navigation/floating-dock";
 import Particles from "@/components/ui/particles";
+import Footer from "@/components/hocs/Contact/Footer";
 
 const Layout = ({
   children,
@@ -19,7 +19,7 @@ const Layout = ({
   }, [resolvedTheme]);
 
   return (
-    <div className="relative  min-h-screen px-2 pt-36 sm:px-5 lg:px-28">
+    <div className="relative pb-10 px-2 pt-36 sm:px-5 lg:px-28">
       <Navbar />
       {children}
       <Particles
@@ -29,7 +29,8 @@ const Layout = ({
         color={color}
         refresh
       />
-      <FloatingDockDemo />
+      <Footer />
+      {/* <FloatingDockDemo /> */}
     </div>
   );
 };
