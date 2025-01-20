@@ -5,8 +5,6 @@ const svgToDataUri = require("mini-svg-data-uri");
 // eslint-disable-next-line import/first
 import type { Config } from "tailwindcss";
 
-
-
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const {
   default: flattenColorPalette,
@@ -33,13 +31,19 @@ export default {
     extend: {
       colors: {
         primary: {
-          "100": "#FFF1E6",
-          "500": "#FF7000",
+          "100": "#CCD5D2",
+          "500": "#2F5233",
         },
+        text: {
+          "100": "#F0F5ED",
+          "200": "#2F5233",
+          "300": "#333333",
+        },
+
         dark: {
           "100": "#000000",
           "200": "#0F1117",
-          "300": "#151821",
+          "300": "#243E28",
           "400": "#212734",
           "500": "#101012",
         },

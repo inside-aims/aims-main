@@ -105,7 +105,7 @@ export default function FeaturedSection() {
 
         <motion.p
           variants={itemVariants}
-          className="mx-auto max-w-2xl text-center text-lg font-normal text-neutral-600 dark:text-neutral-300"
+          className="mx-auto max-w-2xl text-center text-lg font-normal text-text-200 dark:text-neutral-300"
         >
           At AIMS, we are dedicated to crafting groundbreaking solutions like
           Xolace to empower people, foster connections, and create spaces where
@@ -117,7 +117,7 @@ export default function FeaturedSection() {
       <div className="relative mt-16">
         <motion.div
           variants={containerVariants}
-          className="grid grid-cols-1 gap-8 rounded-lg bg-white/5 p-8 backdrop-blur-lg dark:bg-black/5 lg:grid-cols-6"
+          className="grid grid-cols-1 gap-8 rounded-lg bg-text-200/5 p-8 backdrop-blur-lg dark:bg-black/5 lg:grid-cols-6"
         >
           {features.map((feature, index) => (
             <FeatureCard
@@ -150,7 +150,7 @@ const FeatureCard = motion(
       <motion.div
         variants={variants}
         className={cn(
-          `overflow-hidden rounded-lg bg-white p-6 shadow-lg transition-all duration-300 hover:shadow-xl dark:bg-neutral-800`,
+          `overflow-hidden rounded-lg bg-text-100/5 p-6 shadow-lg transition-all duration-300 hover:shadow-xl dark:bg-neutral-800`,
           className
         )}
         whileHover={{ scale: 1.02 }}
@@ -163,7 +163,7 @@ const FeatureCard = motion(
 
 const FeatureTitle = ({ children }: { children?: React.ReactNode }) => {
   return (
-    <h3 className="mb-3 text-xl font-semibold tracking-tight text-black dark:text-white md:text-2xl">
+    <h3 className="mb-3 text-xl font-semibold tracking-tight text-text-200 dark:text-white md:text-2xl">
       {children}
     </h3>
   );
@@ -171,7 +171,7 @@ const FeatureTitle = ({ children }: { children?: React.ReactNode }) => {
 
 const FeatureDescription = ({ children }: { children?: React.ReactNode }) => {
   return (
-    <p className="text-sm text-neutral-600 dark:text-neutral-300 md:text-base">
+    <p className="text-sm text-text-200 dark:text-neutral-300 md:text-base">
       {children}
     </p>
   );

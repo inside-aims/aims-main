@@ -12,25 +12,41 @@ const Layout = ({
   children: React.ReactNode;
 }>) => {
   const { resolvedTheme } = useTheme();
-  const [color, setColor] = useState("#ffffff");
+  const [color, setColor] = useState("#e4a576");
 
   useEffect(() => {
-    setColor(resolvedTheme === "dark" ? "#ffffff" : "#000000");
+    // Using the peach color for dark mode particles and slate blue for light mode
+    setColor(resolvedTheme === "dark" ? "#e4a576" : "#698ea2");
   }, [resolvedTheme]);
 
   return (
-    <div className="relative pb-10 px-2 pt-36 sm:px-5 lg:px-28">
-      <Navbar />
-      {children}
-      <Particles
-        className="absolute inset-0"
-        quantity={100}
-        ease={80}
-        color={color}
-        refresh
-      />
-      <Footer />
-      {/* <FloatingDockDemo /> */}
+    <div
+      className={`min-h-screen ${
+        resolvedTheme === "dark"
+          ? "bg-[#121212] text-white"
+          : "bg-[#F0F5ED]/90 text-[#2F5233]"
+      }`}
+    >
+      <div className="relative pb-10 px-2 pt-36 sm:px-5 lg:px-28">
+        <Navbar />
+        <div
+          className={`relative z-10 ${
+            resolvedTheme === "dark"
+              ? "prose-headings:text-[#e4a576] prose-p:text-[#fde6d8]"
+              : "prose-headings:text-[#152935] prose-p:text-[#152935]"
+          }`}
+        >
+          {children}
+        </div>
+        <Particles
+          className="absolute inset-0 pointer-events-none"
+          quantity={100}
+          ease={80}
+          color={color}
+          refresh
+        />
+        <Footer />
+      </div>
     </div>
   );
 };

@@ -40,10 +40,10 @@ export function DreamSection() {
           >
             <span className="w-8 h-8 text-2xl">✧</span>
           </motion.div>
-          <h3 className="text-3xl font-serif">
+          <h3 className="text-3xl font-serif text-text-200">
             Innovate without <em>limits</em>, build beyond<em> boundaries</em>.
           </h3>
-          <p className="text-gray-600 max-w-md mx-auto">
+          <p className="text-text-200 max-w-md mx-auto">
             At AIMS, we tailor our approach to meet the unique needs of every
             project, creating transformative solutions that redefine technology.
             Known for our dedication to excellence and precision, we deliver
@@ -51,7 +51,9 @@ export function DreamSection() {
             expertise.
           </p>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button className="mt-8">Get in touch</Button>
+            <Button className="mt-8 text-text-100 bg-text-200">
+              Get in touch
+            </Button>
           </motion.div>
         </motion.div>
 

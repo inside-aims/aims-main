@@ -27,7 +27,7 @@ const InnovationSection: React.FC = () => {
       variants={fadeInUp}
       initial="initial"
       animate="animate"
-      className="overflow-hidden bg-gradient-to-br from-white to-gray-100 dark:from-gray-900 dark:to-black mt-24"
+      className="overflow-hidden bg-gradient-to-br from-text-100 via-[#6BA17A] to-text-200 dark:from-gray-900 dark:to-black mt-24"
     >
       <CardContent className="p-0">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
@@ -47,13 +47,13 @@ const InnovationSection: React.FC = () => {
           >
             <motion.h2
               variants={fadeInUp}
-              className="mb-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl lg:text-5xl"
+              className="mb-4 text-3xl font-bold tracking-tight text-text-100 dark:text-white md:text-4xl lg:text-5xl"
             >
               Innovating Connections, Building Safe Spaces
             </motion.h2>
             <motion.p
               variants={fadeInUp}
-              className="text-lg text-gray-600 dark:text-gray-300"
+              className="text-lg text-text-100 dark:text-gray-300"
             >
               We&apos;re on a mission to revolutionize digital interactions,
               delivering cutting-edge solutions that foster connection and
@@ -68,7 +68,7 @@ const InnovationSection: React.FC = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="rounded-full bg-blue-600 px-6 py-3 text-white transition-colors hover:bg-blue-700"
+                className="rounded-full bg-text-100 px-6 py-3 text-text-200 transition-colors hover:bg-text-300 hover:text-text-100"
               >
                 Learn More
               </motion.button>
