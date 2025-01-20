@@ -33,6 +33,7 @@ export default {
         primary: {
           "100": "#CCD5D2",
           "500": "#2F5233",
+          gradient: "bg-gradient-to-r from-green-400 to-emerald-500 ",
         },
         text: {
           "100": "#F0F5ED",
