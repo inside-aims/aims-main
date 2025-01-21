@@ -46,7 +46,7 @@ export default function HeroSection() {
       </motion.div>
       <div className="z-10 text-center">
         <motion.h1
-          className="mb-4 text-5xl font-bold md:text-7xl"
+          className="mb-4 text-5xl font-bold md:text-7xl text-text-200"
           variants={textVariants}
           initial="hidden"
           animate="visible"
@@ -55,14 +55,14 @@ export default function HeroSection() {
           CONTACT US
         </motion.h1>
         <motion.p
-          className="text-xl text-gray-300 md:text-2xl"
+          className="text-xl text-text-300 md:text-2xl"
           variants={textVariants}
           initial="hidden"
           animate="visible"
           custom={1}
         >
-          We&apos;re here to help you innovate and grow. Let&apos;s connect and create
-          something amazing together.
+          We&apos;re here to help you innovate and grow. Let&apos;s connect and
+          create something amazing together.
         </motion.p>
       </div>
     </section>

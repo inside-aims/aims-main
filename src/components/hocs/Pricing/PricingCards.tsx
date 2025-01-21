@@ -41,7 +41,7 @@ const plans = [
 
 export default function PricingCards() {
   return (
-    <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 ">
       <motion.div
         className="grid gap-8 md:grid-cols-3"
         initial={{ opacity: 0 }}
@@ -55,7 +55,7 @@ export default function PricingCards() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             whileHover={{ scale: 1.02 }}
-            className="group relative rounded-2xl border border-gray-800 bg-gray-900/50 p-8 backdrop-blur-xl transition-all duration-300 hover:border-gray-700"
+            className="group relative rounded-2xl border hover:cursor-pointer bg-gradient-to-r from-green-400 to-emerald-500 p-8 backdrop-blur-xl transition-all duration-300 hover:border-gray-700"
           >
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-gray-800/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             <h3 className="mb-4 text-xl font-semibold">{plan.name}</h3>
@@ -64,14 +64,14 @@ export default function PricingCards() {
               {plan.features.map((feature) => (
                 <li
                   key={feature}
-                  className="flex items-start gap-3 text-gray-300"
+                  className="flex items-start gap-3 text-text-100"
                 >
                   <Check className="size-5 shrink-0 text-green-500" />
                   <span>{feature}</span>
                 </li>
               ))}
             </ul>
-            <button className="w-full rounded-lg bg-gradient-to-r from-gray-800 to-gray-700 px-6 py-3 font-medium text-white transition-all duration-300 hover:from-gray-700 hover:to-gray-600">
+            <button className="w-full rounded-lg bg-gradient-to-r from-gray-800 to-gray-700 px-6 py-3 font-medium text-text-100 transition-all duration-300 hover:from-gray-700 hover:to-gray-600">
               Get Started
             </button>
           </motion.div>

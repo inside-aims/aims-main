@@ -103,7 +103,7 @@ export default function ContactForm() {
         >
           <div>
             <motion.h2
-              className="mb-4 text-3xl font-bold"
+              className="mb-4 text-3xl text-text-200 font-bold"
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -112,19 +112,19 @@ export default function ContactForm() {
               Have any query?
             </motion.h2>
             <motion.p
-              className="mb-4 text-gray-300"
+              className="mb-4 text-text-300"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
             >
               Our team of tech experts is ready to assist you with any questions
-              or concerns you may have. Whether you&apos;re looking for technical
-              support, product information, or partnership opportunities, we&apos;re
-              here to help.
+              or concerns you may have. Whether you&apos;re looking for
+              technical support, product information, or partnership
+              opportunities, we&apos;re here to help.
             </motion.p>
             <motion.p
-              className="text-gray-300"
+              className="text-text-300"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

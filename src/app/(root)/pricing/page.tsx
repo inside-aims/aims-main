@@ -12,7 +12,7 @@ import PricingHero from "@/components/hocs/Pricing/PricingHero";
 import Testimonials from "@/components/hocs/Pricing/Testimonials";
 export default function PricingPage() {
   return (
-    <div className="min-h-screen  text-white">
+    <div className="text-text-100">
       <PricingHero />
       <PricingCards />
       <ComparisonTable />
