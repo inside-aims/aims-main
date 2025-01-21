@@ -47,17 +47,17 @@ const cardVariants = {
 export default function InfoCards() {
   return (
     <motion.section
-      className="py-16 px-4 md:px-0"
+      className="px-4 py-16 md:px-0"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
     >
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-3">
         {cards.map((card, index) => (
           <motion.div
             key={index}
-            className="bg-gray-900 p-6 rounded-lg shadow-lg"
+            className="rounded-lg bg-gray-900 p-6 shadow-lg"
             variants={cardVariants}
             whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
           >
@@ -70,10 +70,10 @@ export default function InfoCards() {
                 stiffness: 200,
               }}
             >
-              <card.icon className="w-12 h-12 text-[#FFC107] mb-4" />
+              <card.icon className="mb-4 size-12 text-[#FFC107]" />
             </motion.div>
-            <h3 className="text-xl font-semibold mb-2">{card.title}</h3>
-            <p className="text-gray-300 whitespace-pre-line">{card.content}</p>
+            <h3 className="mb-2 text-xl font-semibold">{card.title}</h3>
+            <p className="whitespace-pre-line text-gray-300">{card.content}</p>
           </motion.div>
         ))}
       </div>

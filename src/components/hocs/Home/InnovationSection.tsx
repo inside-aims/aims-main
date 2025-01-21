@@ -1,7 +1,8 @@
 "use client";
 
-import React from "react";
 import { motion } from "framer-motion";
+import React from "react";
+
 import ProjectsMockup from "@/components/shared/ProjectsMockup";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -27,7 +28,7 @@ const InnovationSection: React.FC = () => {
       variants={fadeInUp}
       initial="initial"
       animate="animate"
-      className="overflow-hidden bg-gradient-to-br from-text-100 via-[#6BA17A] to-text-200 dark:from-gray-900 dark:to-black mt-24"
+      className="mt-24 overflow-hidden bg-gradient-to-br from-text-100 via-[#6BA17A] to-text-200 dark:from-gray-900 dark:to-black"
     >
       <CardContent className="p-0">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
