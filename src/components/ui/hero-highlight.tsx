@@ -1,3 +1,4 @@
+/* eslint-disable tailwindcss/no-custom-classname */
 "use client";
 import { useMotionValue, motion, useMotionTemplate } from "framer-motion";
 import React from "react";

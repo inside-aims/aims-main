@@ -1,5 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable no-unused-vars */
 "use client";
+import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 
 import {
@@ -15,21 +19,51 @@ import { Theme } from "../navbar/Theme-toggler";
 const Navbar = ({ className }: { className?: string }) => {
   const [active, setActive] = useState<string | null>(null);
   return (
-    <div
-      className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
+    <motion.div
+      initial={{
+        y: -10,
+        opacity: 0,
+      }}
+      animate={{
+        y: 0,
+        opacity: 1,
+      }}
+      transition={{
+        delay: 0.7,
+        duration: 0.34,
+      }}
+      typeof="spring"
+      className={cn("fixed top-0 inset-x-0 max-w-1xl mx-auto z-50", className)}
     >
       <Menu setActive={setActive}>
-        <div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+        >
           <Image
             src="/assets/images/AIMS.png"
             width={60}
             height={60}
             alt="AIMS logo"
           />
-        </div>
-        <div className="flex space-x-4">
-          <MenuItem setActive={setActive} active={active} item="Services">
+        </motion.div>
+
+        <div className="flex gap-5 space-x-4">
+          <Link href="/">Home</Link>
+          <Link href="/services">Services</Link>
+          <Link href="/products">Products</Link>
+          <Link href="/pricing">Pricing</Link>
+          <Link href="/contact">Contact</Link>
+
+          {/* <MenuItem
+            setActive={setActive}
+            active={active}
+            item="Services"
+            wait={0}
+          >
             <div className="flex flex-col space-y-4 text-sm">
+              <HoveredLink href="/services"> Services</HoveredLink>
               <HoveredLink href="/web-dev">Web Development</HoveredLink>
               <HoveredLink href="/interface-design">
                 Interface Design
@@ -38,11 +72,16 @@ const Navbar = ({ className }: { className?: string }) => {
               <HoveredLink href="/branding">Branding</HoveredLink>
             </div>
           </MenuItem>
-          <MenuItem setActive={setActive} active={active} item="Products">
+          <MenuItem
+            setActive={setActive}
+            active={active}
+            item="Products"
+            wait={0.5}
+          >
             <div className="  grid grid-cols-2 gap-10 p-4 text-sm">
               <ProductItem
                 title="Algochurn"
-                href="https://algochurn.com"
+                href="/products"
                 src="https://assets.aceternity.com/demos/algochurn.webp"
                 description="Prepare for tech interviews like never before."
               />
@@ -66,19 +105,24 @@ const Navbar = ({ className }: { className?: string }) => {
               />
             </div>
           </MenuItem>
-          <MenuItem setActive={setActive} active={active} item="Pricing">
+          <MenuItem
+            setActive={setActive}
+            active={active}
+            item="Pricing"
+            wait={0.7}
+          >
             <div className="flex flex-col space-y-4 text-sm">
               <HoveredLink href="/hobby">Hobby</HoveredLink>
               <HoveredLink href="/individual">Individual</HoveredLink>
               <HoveredLink href="/team">Team</HoveredLink>
               <HoveredLink href="/enterprise">Enterprise</HoveredLink>
             </div>
-          </MenuItem>
+          </MenuItem> */}
         </div>
 
         <Theme />
       </Menu>
-    </div>
+    </motion.div>
   );
 };
 

@@ -28,7 +28,7 @@ const Navbar = () => {
           "data-[active=true]:after:bg-red-400",
         ],
       }}
-      className=" light-gradient dark:dark-gradient mb-10 rounded-md shadow-light-200"
+      className=" light-gradient dark:dark-gradient mb-10 shadow-light-200"
     >
       <NavbarBrand>
         <Image
@@ -38,6 +38,7 @@ const Navbar = () => {
           alt="AIMS logo"
         />
       </NavbarBrand>
+
       <NavbarContent className="hidden gap-4 sm:flex" justify="center">
         <NavbarItem>
           <Link color="foreground" href="#">
