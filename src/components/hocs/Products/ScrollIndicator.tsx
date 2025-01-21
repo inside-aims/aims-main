@@ -23,7 +23,7 @@ export default function ScrollIndicator() {
       animate={{ opacity: 1 }}
       transition={{ delay: 1 }}
     >
-      <span className="text-sm text-neutral-400">Scroll to explore</span>
+      <span className="text-sm text-text-300">Scroll to explore</span>
       <motion.div variants={arrowVariants} initial="initial" animate="animate">
         <ChevronDown className="size-6 text-[#E8D5C4]" />
       </motion.div>

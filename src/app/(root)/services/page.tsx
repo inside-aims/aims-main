@@ -55,7 +55,7 @@ const ServicesPage = () => {
   ];
 
   return (
-    <div className="min-h-screen text-white">
+    <div className="text-white">
       {/* Hero Section */}
       <section className="relative overflow-hidden px-6 pt-16 lg:px-8">
         <motion.div
