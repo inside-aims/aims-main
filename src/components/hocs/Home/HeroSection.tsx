@@ -32,7 +32,7 @@ const HeroSection = () => {
         >
           <span>
             Atlas Innovation & Meta Solutions
-            <Highlight className="block text-sm text-tex-100 dark:text-primary-100">
+            <Highlight className=" block text-sm dark:text-primary-100">
               We create to Inspire
             </Highlight>
           </span>

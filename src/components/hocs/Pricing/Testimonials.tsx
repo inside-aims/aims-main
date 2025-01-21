@@ -26,12 +26,12 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/50">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-12">
+    <section className="bg-gray-900/50 px-4 py-20 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <h2 className="mb-12 text-center text-3xl font-bold">
           What Our Customers Say
         </h2>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid gap-8 md:grid-cols-3">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
@@ -39,10 +39,10 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-gray-800/50 backdrop-blur-xl rounded-xl p-6 relative"
+              className="relative rounded-xl bg-gray-800/50 p-6 backdrop-blur-xl"
             >
-              <Quote className="absolute top-4 right-4 h-6 w-6 text-gray-600" />
-              <p className="text-gray-300 mb-4">{testimonial.quote}</p>
+              <Quote className="absolute right-4 top-4 size-6 text-gray-600" />
+              <p className="mb-4 text-gray-300">{testimonial.quote}</p>
               <div>
                 <div className="font-semibold">{testimonial.author}</div>
                 <div className="text-sm text-gray-400">{testimonial.role}</div>

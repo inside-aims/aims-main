@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 
 // Assuming you have a services array defined somewhere
@@ -32,7 +32,7 @@ function CardItem({ service, index }) {
       whileHover={{ y: -5 }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
-      className="group relative overflow-hidden rounded-2xl p-8 bg-white shadow-md hover:shadow-lg transition-all duration-300"
+      className="group relative overflow-hidden rounded-2xl bg-white p-8 shadow-md transition-all duration-300 hover:shadow-lg"
     >
       <motion.div
         className="relative z-10"
@@ -70,17 +70,17 @@ function CardItem({ service, index }) {
         >
           <Link
             href={`/services/${service.id}`}
-            className="mt-4 inline-flex items-center text-sm font-medium text-emerald-600 hover:text-emerald-700 relative overflow-hidden group"
+            className="group relative mt-4 inline-flex items-center overflow-hidden text-sm font-medium text-emerald-600 hover:text-emerald-700"
           >
             <span className="relative z-10">Learn more</span>
             <motion.span
-              className="absolute bottom-0 left-0 w-full h-0.5 bg-emerald-600 origin-left"
+              className="absolute bottom-0 left-0 h-0.5 w-full origin-left bg-emerald-600"
               initial={{ scaleX: 0 }}
               animate={{ scaleX: isHovered ? 1 : 0 }}
               transition={{ duration: 0.3 }}
             />
             <motion.div
-              className="ml-1 h-4 w-4"
+              className="ml-1 size-4"
               animate={{ x: isHovered ? 5 : 0 }}
               transition={{ type: "spring", stiffness: 300, damping: 10 }}
             >
@@ -90,7 +90,7 @@ function CardItem({ service, index }) {
         </motion.div>
       </motion.div>
       <motion.div
-        className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-gradient-to-br from-emerald-100 to-green-100 opacity-50"
+        className="absolute -right-10 -top-10 size-40 rounded-full bg-gradient-to-br from-emerald-100 to-green-100 opacity-50"
         animate={{
           scale: isHovered ? 1.5 : 1,
           opacity: isHovered ? 0.7 : 0.5,

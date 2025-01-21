@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUp } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function BackToTop() {
   const [isVisible, setIsVisible] = useState(false);
@@ -40,7 +40,7 @@ export default function BackToTop() {
           exit={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.2 }}
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 p-2 rounded-full bg-primary/90 backdrop-blur supports-[backdrop-filter]:bg-primary/60 hover:bg-primary shadow-lg hover:shadow-xl transition-shadow duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 group"
+          className="group fixed bottom-8 right-8 z-50 rounded-full bg-primary-500 p-2 shadow-lg backdrop-blur transition-shadow duration-300 hover:bg-primary-500/90 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-primary-100 focus:ring-offset-2 supports-[backdrop-filter]:bg-primary-500"
           aria-label="Back to top"
         >
           <motion.div
@@ -51,7 +51,7 @@ export default function BackToTop() {
               ease: "easeInOut",
             }}
           >
-            <ArrowUp className="w-5 h-5 text-primary-foreground group-hover:text-primary-foreground/80 transition-colors" />
+            <ArrowUp className="size-5 text-black transition-colors group-hover:text-black/80" />
           </motion.div>
         </motion.button>
       )}

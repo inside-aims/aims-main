@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { motion, useTransform, MotionValue } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 interface Product {
   id: number;
@@ -108,7 +108,7 @@ export default function ProductCard({
 
   return (
     <motion.div
-      className="sticky top-0 flex h-screen items-center justify-center w-full"
+      className="sticky top-0 flex h-screen w-full items-center justify-center"
       style={{ opacity, y: yOffset }}
     >
       <motion.div
@@ -138,7 +138,7 @@ export default function ProductCard({
           </div>
 
           <div className="relative h-1 w-64">
-            <div className="absolute h-full w-full rounded-full bg-neutral-800" />
+            <div className="absolute size-full rounded-full bg-neutral-800" />
             <motion.div
               className="absolute h-full rounded-full"
               style={{
@@ -166,13 +166,13 @@ export default function ProductCard({
               alt={product.name}
               width={400}
               height={600}
-              className="h-auto w-auto object-contain"
+              className="size-auto object-contain"
             />
           </motion.div>
 
           {/* Circular Progress */}
           <svg
-            className="absolute right-16 top-16 h-16 w-16"
+            className="absolute right-16 top-16 size-16"
             viewBox="0 0 100 100"
           >
             <motion.circle
@@ -204,11 +204,11 @@ export default function ProductCard({
               The design
             </motion.span>
             <motion.div
-              className="flex h-10 w-10 items-center justify-center rounded-full"
+              className="flex size-10 items-center justify-center rounded-full"
               variants={buttonVariants}
             >
               <motion.div variants={arrowVariants}>
-                <ArrowRight className="h-4 w-4 text-white" />
+                <ArrowRight className="size-4 text-white" />
               </motion.div>
             </motion.div>
           </motion.div>

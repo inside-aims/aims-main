@@ -12,12 +12,12 @@ export function HeroSectionAlternative() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className={`relative rounded-3xl overflow-hidden mx-4 lg:mx-8 mb-24 ${
+      className={`relative mx-4 mb-24 overflow-hidden rounded-3xl lg:mx-8 ${
         resolvedTheme === "dark" ? "bg-[#243E28]" : "bg-text-200"
       }`}
     >
       <div className="container mx-auto px-4 py-16 lg:py-24">
-        <div className="max-w-2xl relative z-10">
+        <div className="relative z-10 max-w-2xl">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -35,7 +35,7 @@ export function HeroSectionAlternative() {
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.5 + i * 0.2 }}
-                className={`text-4xl lg:text-5xl font-serif mb-2 ${
+                className={`mb-2 font-serif text-4xl lg:text-5xl ${
                   i === 1 ? "italic" : ""
                 } ${
                   resolvedTheme === "dark" ? "text-[#e4a576]" : "text-text-100"
@@ -52,14 +52,14 @@ export function HeroSectionAlternative() {
         initial={{ opacity: 0, scale: 1.1 }}
         animate={{ opacity: resolvedTheme === "dark" ? 0.3 : 0.7, scale: 1 }}
         transition={{ duration: 1.2 }}
-        className="absolute top-0 right-0 w-1/2 h-full"
+        className="absolute right-0 top-0 h-full w-1/2"
       >
         <Image
           src="/assets/images/image-2.jpg"
           alt="Modern building facade"
           width={800}
           height={600}
-          className="h-full w-full object-cover"
+          className="size-full object-cover"
         />
       </motion.div>
 

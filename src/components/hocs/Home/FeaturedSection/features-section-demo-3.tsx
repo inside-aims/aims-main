@@ -1,10 +1,9 @@
 "use client";
 
-import { IconBrandYoutubeFilled } from "@tabler/icons-react";
+// import { IconBrandYoutubeFilled } from "@tabler/icons-react";
 import createGlobe from "cobe";
 import { motion, useAnimation, useInView } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 
 import { cn } from "@/lib/utils";
@@ -121,7 +120,7 @@ export default function FeaturedSection() {
         >
           {features.map((feature, index) => (
             <FeatureCard
-              key={feature.title}
+              key={`${feature.title}${index}`}
               className={feature.className}
               variants={itemVariants}
             >
@@ -144,6 +143,7 @@ const FeatureCard = motion(
   }: {
     children?: React.ReactNode;
     className?: string;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     variants?: any;
   }) => {
     return (
@@ -194,7 +194,7 @@ const SkeletonOne = () => {
         animate={{ rotate: 360 }}
         transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
       >
-        <div className="h-full w-full rounded-full border-4 border-white/30" />
+        <div className="size-full rounded-full border-4 border-white/30" />
       </motion.div>
     </div>
   );
@@ -234,7 +234,7 @@ const SkeletonTwo = () => {
               alt={`Expert help image ${idx + 1}`}
               width={100}
               height={100}
-              className="h-20 w-20 object-cover"
+              className="size-20 object-cover"
             />
           </motion.div>
         ))}

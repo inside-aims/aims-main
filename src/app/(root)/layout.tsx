@@ -2,9 +2,10 @@
 
 import { useTheme } from "next-themes";
 import React, { useEffect, useState } from "react";
+
+import Footer from "@/components/hocs/Contact/Footer";
 import Navbar from "@/components/shared/navigation/acert-navbar";
 import Particles from "@/components/ui/particles";
-import Footer from "@/components/hocs/Contact/Footer";
 
 const Layout = ({
   children,
@@ -27,7 +28,7 @@ const Layout = ({
           : "bg-[#F0F5ED]/90 text-[#2F5233]"
       }`}
     >
-      <div className="relative pb-10 px-2 pt-36 sm:px-5 lg:px-28">
+      <div className="relative px-2 pb-10 pt-36 sm:px-5 lg:px-28">
         <Navbar />
         <div
           className={`relative z-10 ${
@@ -39,8 +40,8 @@ const Layout = ({
           {children}
         </div>
         <Particles
-          className="absolute inset-0 pointer-events-none"
-          quantity={100}
+          className="pointer-events-none absolute inset-0"
+          quantity={200}
           ease={80}
           color={color}
           refresh

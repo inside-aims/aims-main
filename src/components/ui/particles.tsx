@@ -132,8 +132,6 @@ const Particles: React.FC<ParticlesProps> = ({
     }
   };
 
-
-
   const resizeCanvas = () => {
     if (canvasContainerRef.current && canvasRef.current && context.current) {
       circles.current.length = 0;
@@ -279,7 +277,7 @@ const Particles: React.FC<ParticlesProps> = ({
       ref={canvasContainerRef}
       aria-hidden="true"
     >
-      <canvas ref={canvasRef} className="size-full" />
+      <canvas ref={canvasRef} className=" min-h-screen w-full" />
     </div>
   );
 };

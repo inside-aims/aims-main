@@ -1,8 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
 import {
   ArrowRight,
   Code,
@@ -11,6 +9,9 @@ import {
   Search,
   Palette,
 } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+
 import ServiceCards from "@/components/Services/EnhancedLightModeCards";
 
 const ServicesPage = () => {
@@ -20,35 +21,35 @@ const ServicesPage = () => {
       title: "Web Development",
       description:
         "Full-stack development solutions with cutting-edge technologies",
-      icon: <Code className="h-6 w-6" />,
+      icon: <Code className="size-6" />,
       color: "from-green-400 to-emerald-500",
     },
     {
       id: "02",
       title: "Interface Design",
       description: "Beautiful, intuitive interfaces that users love",
-      icon: <Layout className="h-6 w-6" />,
+      icon: <Layout className="size-6" />,
       color: "from-blue-400 to-cyan-500",
     },
     {
       id: "03",
       title: "Mobile Development",
       description: "Native and cross-platform mobile applications",
-      icon: <Smartphone className="h-6 w-6" />,
+      icon: <Smartphone className="size-6" />,
       color: "from-purple-400 to-pink-500",
     },
     {
       id: "04",
       title: "SEO Optimization",
       description: "Boost your visibility and organic traffic",
-      icon: <Search className="h-6 w-6" />,
+      icon: <Search className="size-6" />,
       color: "from-yellow-400 to-orange-500",
     },
     {
       id: "05",
       title: "UI/UX Design",
       description: "User-centered design that drives engagement",
-      icon: <Palette className="h-6 w-6" />,
+      icon: <Palette className="size-6" />,
       color: "from-red-400 to-rose-500",
     },
   ];
@@ -69,7 +70,7 @@ const ServicesPage = () => {
                 <span className="block text-text-200">
                   Transform your ideas into
                 </span>
-                <span className="mt-2 block bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent h-20">
+                <span className="mt-2 block h-20 bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">
                   digital excellence
                 </span>
               </h1>
@@ -94,7 +95,7 @@ const ServicesPage = () => {
                     {[...Array(5)].map((_, i) => (
                       <div
                         key={i}
-                        className="inline-block h-8 w-8 rounded-full bg-gradient-to-r from-green-400 to-emerald-500"
+                        className="inline-block size-8 rounded-full bg-gradient-to-r from-green-400 to-emerald-500"
                         // black:bg-gradient-to-r from-gray-700 to-gray-600 ring-2 ring-black dark mode
                       />
                     ))}
@@ -136,7 +137,7 @@ const ServicesPage = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-text-200">
+          <h2 className="text-3xl font-bold tracking-tight text-text-200 sm:text-4xl">
             Our Services
           </h2>
           <p className="mt-4 text-text-300">
@@ -185,7 +186,7 @@ const ServicesPage = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -5 }}
-              className="group relative overflow-hidden rounded-2xl p-8 bg-white shadow-md hover:shadow-lg transition-shadow duration-300"
+              className="group relative overflow-hidden rounded-2xl bg-white p-8 shadow-md transition-shadow duration-300 hover:shadow-lg"
             >
               <div className="relative z-10">
                 <div
@@ -201,10 +202,10 @@ const ServicesPage = () => {
                   href={`/services/${service.id}`}
                   className="mt-4 inline-flex items-center text-sm font-medium text-emerald-600 hover:text-emerald-700"
                 >
-                  Learn more <ArrowRight className="ml-1 h-4 w-4" />
+                  Learn more <ArrowRight className="ml-1 size-4" />
                 </Link>
               </div>
-              <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-gradient-to-br from-emerald-100 to-green-100 opacity-50 transition-all duration-300 group-hover:scale-150" />
+              <div className="absolute -right-10 -top-10 size-40 rounded-full bg-gradient-to-br from-emerald-100 to-green-100 opacity-50 transition-all duration-300 group-hover:scale-150" />
             </motion.div>
           ))}
         </div>

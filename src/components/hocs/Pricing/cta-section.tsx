@@ -9,17 +9,17 @@ export default function CTASection() {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className="py-20 px-4 sm:px-6 lg:px-8 text-center"
+      className="px-4 py-20 text-center sm:px-6 lg:px-8"
     >
-      <div className="max-w-3xl mx-auto">
-        <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
-        <p className="text-gray-400 mb-8">
+      <div className="mx-auto max-w-3xl">
+        <h2 className="mb-4 text-3xl font-bold">Ready to Get Started?</h2>
+        <p className="mb-8 text-gray-400">
           Join thousands of satisfied customers who trust our services
         </p>
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="px-8 py-4 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-medium transition-all duration-300"
+          className="rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-4 font-medium text-white transition-all duration-300 hover:from-blue-500 hover:to-purple-500"
         >
           Start Your Free Trial
         </motion.button>

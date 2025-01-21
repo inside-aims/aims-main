@@ -2,14 +2,14 @@
 
 import { motion } from "framer-motion";
 
-const waveVariants = {
-  hidden: { pathLength: 0, opacity: 0 },
-  visible: {
-    pathLength: 1,
-    opacity: 1,
-    transition: { duration: 2, ease: "easeInOut" },
-  },
-};
+// const waveVariants = {
+//   hidden: { pathLength: 0, opacity: 0 },
+//   visible: {
+//     pathLength: 1,
+//     opacity: 1,
+//     transition: { duration: 2, ease: "easeInOut" },
+//   },
+// };
 
 const textVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -22,7 +22,7 @@ const textVariants = {
 
 export default function HeroSection() {
   return (
-    <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+    <section className="relative flex h-[50vh] items-center justify-center overflow-hidden">
       <motion.div
         className="absolute inset-0 z-0"
         initial={{ opacity: 0 }}
@@ -30,7 +30,7 @@ export default function HeroSection() {
         transition={{ duration: 1 }}
       >
         <svg
-          className="w-full h-full"
+          className="size-full"
           viewBox="0 0 1440 320"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -46,7 +46,7 @@ export default function HeroSection() {
       </motion.div>
       <div className="z-10 text-center">
         <motion.h1
-          className="text-5xl md:text-7xl font-bold mb-4"
+          className="mb-4 text-5xl font-bold md:text-7xl"
           variants={textVariants}
           initial="hidden"
           animate="visible"
@@ -55,13 +55,13 @@ export default function HeroSection() {
           CONTACT US
         </motion.h1>
         <motion.p
-          className="text-xl md:text-2xl text-gray-300"
+          className="text-xl text-gray-300 md:text-2xl"
           variants={textVariants}
           initial="hidden"
           animate="visible"
           custom={1}
         >
-          We're here to help you innovate and grow. Let's connect and create
+          We&apos;re here to help you innovate and grow. Let&apos;s connect and create
           something amazing together.
         </motion.p>
       </div>

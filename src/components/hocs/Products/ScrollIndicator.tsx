@@ -25,7 +25,7 @@ export default function ScrollIndicator() {
     >
       <span className="text-sm text-neutral-400">Scroll to explore</span>
       <motion.div variants={arrowVariants} initial="initial" animate="animate">
-        <ChevronDown className="h-6 w-6 text-[#E8D5C4]" />
+        <ChevronDown className="size-6 text-[#E8D5C4]" />
       </motion.div>
     </motion.div>
   );

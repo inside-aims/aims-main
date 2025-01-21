@@ -28,21 +28,21 @@ const itemVariants = {
 export default function Footer() {
   return (
     <motion.footer
-      className="bg-text-200 py-16 px-4 md:px-0"
+      className="bg-text-200 px-4 py-16 md:px-0"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="mx-auto max-w-6xl">
         <motion.h2
-          className="text-4xl font-bold text-text-100 mb-8 text-center"
+          className="mb-8 text-center text-4xl font-bold text-text-100"
           variants={itemVariants}
         >
-          Let's Talk
+          Let&apos;s Talk
         </motion.h2>
         <motion.div
-          className="flex justify-center space-x-6 mb-8"
+          className="mb-8 flex justify-center space-x-6"
           variants={itemVariants}
         >
           {[Facebook, Twitter, Instagram, Linkedin, Github].map(
@@ -54,13 +54,13 @@ export default function Footer() {
                 whileHover={{ scale: 1.2, rotate: 360 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <Icon className="w-6 h-6" />
+                <Icon className="size-6" />
               </motion.a>
             )
           )}
         </motion.div>
         <motion.div
-          className="text-center text-gray-300 mb-8"
+          className="mb-8 text-center text-gray-300"
           variants={itemVariants}
         >
           <p>Tech Company Inc.</p>
@@ -74,7 +74,7 @@ export default function Footer() {
         >
           <motion.a
             href="#"
-            className="hover:text-[#FFC107] mr-4"
+            className="mr-4 hover:text-[#FFC107]"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >

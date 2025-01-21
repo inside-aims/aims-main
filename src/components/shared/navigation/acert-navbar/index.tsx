@@ -1,8 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable no-unused-vars */
 "use client";
-import Image from "next/image";
-import React, { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
+import React, { useState } from "react";
+
 import {
   HoveredLink,
   Menu,
@@ -46,7 +49,7 @@ const Navbar = ({ className }: { className?: string }) => {
           />
         </motion.div>
 
-        <div className="flex space-x-4 gap-5">
+        <div className="flex gap-5 space-x-4">
           <Link href="/">Home</Link>
           <Link href="/services">Services</Link>
           <Link href="/products">Products</Link>

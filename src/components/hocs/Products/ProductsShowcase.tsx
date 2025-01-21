@@ -1,9 +1,10 @@
 "use client";
 
-import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import ProductCard from "./ProductCard";
+import { useRef } from "react";
+
 import FloatingElements from "./FloatingElements";
+import ProductCard from "./ProductCard";
 import ScrollIndicator from "./ScrollIndicator";
 const products = [
   {
@@ -93,7 +94,7 @@ export default function ProductsShowcase() {
         animate="visible"
         variants={titleVariants}
       >
-        <h1 className="text-center text-8xl font-bold tracking-tight dark:text-[#E8D5C4] text-[#E8D5C4] font-serif">
+        <h1 className="text-center font-serif text-8xl font-bold tracking-tight text-[#E8D5C4] dark:text-[#E8D5C4]">
           {"Our Products".split("").map((letter, index) => (
             <motion.span
               key={index}
