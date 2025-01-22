@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
+import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 
@@ -50,11 +51,14 @@ export function DreamSection() {
             cutting-edge software, hardware, and IT support with unparalleled
             expertise.
           </p>
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button className="mt-8 bg-text-200 text-text-100">
-              Get in touch
-            </Button>
-          </motion.div>
+
+          <Link href={"/contact"}>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button className="mt-8 bg-text-200 text-text-100">
+                Get in touch
+              </Button>
+            </motion.div>
+          </Link>
         </motion.div>
 
         <motion.div

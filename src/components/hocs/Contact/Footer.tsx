@@ -63,9 +63,9 @@ export default function Footer() {
           className="mb-8 text-center text-gray-300"
           variants={itemVariants}
         >
-          <p>Tech Company Inc.</p>
-          <p>123 Tech Avenue, Silicon Valley, CA 94000</p>
-          <p>contact@techcompany.com</p>
+          <p>Atlas Innovation & Meta Solutions</p>
+          <p>Koforidua Technical University</p>
+          <p>a.i.m.s582024@gmail.com</p>
           <p>+1 (555) 987-6543</p>
         </motion.div>
         <motion.div

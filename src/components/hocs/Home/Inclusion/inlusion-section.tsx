@@ -3,7 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
-
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 export function InclusionsSection() {
@@ -27,22 +27,25 @@ export function InclusionsSection() {
             className="space-y-6"
           >
             <h2 className="font-serif text-4xl text-text-100">
-              Our Defining <em>Features</em>
+              Our Innovative <em>Products</em>
             </h2>
             <p className="text-text-100">
               Transforming ideas into extraordinary realities, we create
               tailored tech solutions that inspire. Experience the power of
               innovative designs, top-tier services, and modern technology
-              integrations.
+              integrations through our products.
             </p>
-            <motion.div whileHover={{ rotate: 2 }} whileTap={{ scale: 0.95 }}>
-              <Button
-                variant="secondary"
-                className="mt-4 bg-text-100 text-text-200"
-              >
-                View Inclusions
-              </Button>
-            </motion.div>
+
+            <Link href={"/products"}>
+              <motion.div whileHover={{ rotate: 2 }} whileTap={{ scale: 0.95 }}>
+                <Button
+                  variant="secondary"
+                  className="mt-4 bg-text-100 text-text-200"
+                >
+                  View Products
+                </Button>
+              </motion.div>
+            </Link>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
