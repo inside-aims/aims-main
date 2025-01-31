@@ -64,7 +64,7 @@ export default function Footer() {
           variants={itemVariants}
         >
           <p>Atlas Innovation & Meta Solutions</p>
-          <p>Koforidua Technical University</p>
+          <p>Koforidua Technical University </p>
           <p>a.i.m.s582024@gmail.com</p>
           <p>+1 (555) 987-6543</p>
         </motion.div>

@@ -28,7 +28,7 @@ export function HeroSectionAlternative() {
           >
             Atlas Innovation and Meta Solutions
           </motion.p>
-          {["Set New Standards", "in Modern Tech", "Businesses"].map(
+          {["Setting New Standards", "in Modern Tech", "Businesses"].map(
             (text, i) => (
               <motion.h1
                 key={text}

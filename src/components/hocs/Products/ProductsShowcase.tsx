@@ -9,11 +9,10 @@ import ScrollIndicator from "./ScrollIndicator";
 const products = [
   {
     id: 1,
-    name: "TechFlow Pro",
-    tagline: "Next-gen Workflow Solution",
-    description:
-      "Experience seamless project management with AI-powered insights",
-    image: "/placeholder.svg?height=600&width=400",
+    name: "Aims Achievers Network",
+    tagline: "Honoring Outstanding Achievements in Academia",
+    description: "E-voting platform honoring academic excellence.",
+    image: "/assets/images/advice-1.jpg",
     color: {
       accent: "#FF4D00",
       text: "#E8D5C4",
