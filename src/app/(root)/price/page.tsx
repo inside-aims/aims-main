@@ -28,7 +28,7 @@ const itemVariants = {
 
 export default function PricingPage() {
   return (
-    <div className="py-16 px-4 sm:px-6 lg:px-8">
+    <div className="py-16 px-4 sm:px-6 lg:px-8 min-h-screen">
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -37,14 +37,25 @@ export default function PricingPage() {
       >
         <motion.h1
           variants={itemVariants}
-          className="text-4xl font-extrabold text-green-900 text-center mb-12"
+          className="text-4xl font-extrabold text-green-900 text-center mb-12 mt-12"
         >
           Pricing Plans
         </motion.h1>
         <motion.div variants={itemVariants}>
           <PricingTiers />
         </motion.div>
+
+        <motion.h1
+          variants={itemVariants}
+          className="text-4xl font-extrabold text-green-900 text-center mb-12 mt-20"
+        >
+          Pricing Plans
+        </motion.h1>
         <motion.div variants={itemVariants}>
+          <PricingTiers />
+        </motion.div>
+
+        {/* <motion.div variants={itemVariants}>
           <ServicePricing />
         </motion.div>
         <motion.div variants={itemVariants}>
@@ -52,7 +63,7 @@ export default function PricingPage() {
         </motion.div>
         <motion.div variants={itemVariants}>
           <ComparisonGrid />
-        </motion.div>
+        </motion.div> */}
       </motion.div>
     </div>
   );
