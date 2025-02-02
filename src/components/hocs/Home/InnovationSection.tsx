@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import React from "react";
-
+import Link from "next/link";
 import ProjectsMockup from "@/components/shared/ProjectsMockup";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -66,13 +66,15 @@ const InnovationSection: React.FC = () => {
               transition={{ delay: 0.6, duration: 0.6 }}
               className="mt-8"
             >
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="rounded-full bg-text-100 px-6 py-3 text-text-200 transition-colors hover:bg-text-300 hover:text-text-100"
-              >
-                Learn More
-              </motion.button>
+              <Link href={"/products"}>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="rounded-full bg-text-100 px-6 py-3 text-text-200 transition-colors hover:bg-text-300 hover:text-text-100"
+                >
+                  Learn More
+                </motion.button>
+              </Link>
             </motion.div>
           </motion.div>
         </div>
