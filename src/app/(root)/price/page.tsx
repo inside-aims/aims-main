@@ -39,7 +39,7 @@ export default function PricingPage() {
           variants={itemVariants}
           className="text-4xl font-extrabold text-green-900 text-center mb-12 mt-12"
         >
-          Pricing Plans
+          Web Dev Pricing Plans
         </motion.h1>
         <motion.div variants={itemVariants}>
           <PricingTiers />
@@ -49,7 +49,17 @@ export default function PricingPage() {
           variants={itemVariants}
           className="text-4xl font-extrabold text-green-900 text-center mb-12 mt-20"
         >
-          Pricing Plans
+          Mobile Apllication Dev Pricing Plans
+        </motion.h1>
+        <motion.div variants={itemVariants}>
+          <PricingTiers />
+        </motion.div>
+
+        <motion.h1
+          variants={itemVariants}
+          className="text-4xl font-extrabold text-green-900 text-center mb-12 mt-20"
+        >
+          Mobile Apllication Dev Pricing Plans
         </motion.h1>
         <motion.div variants={itemVariants}>
           <PricingTiers />
@@ -61,7 +71,9 @@ export default function PricingPage() {
         <motion.div variants={itemVariants}>
           <PricingCalculator />
         </motion.div>
-        <motion.div variants={itemVariants}>
+         */}
+
+        {/* <motion.div variants={itemVariants}>
           <ComparisonGrid />
         </motion.div> */}
       </motion.div>

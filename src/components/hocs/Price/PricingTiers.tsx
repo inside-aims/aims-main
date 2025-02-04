@@ -7,7 +7,13 @@ const tiers = [
   {
     name: "Starter",
     price: "$XXX",
-    features: ["5-page website", "Basic wireframes", "Basic SEO"],
+    features: [
+      "5-page website",
+      "Basic wireframes",
+      "Basic SEO",
+      "Hosting",
+      "Domain",
+    ],
   },
   {
     name: "Business",
