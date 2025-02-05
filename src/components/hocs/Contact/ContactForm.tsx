@@ -31,7 +31,7 @@ export default function ContactForm() {
     <section className="px-4 py-16 md:px-0">
       <div className="mx-auto flex max-w-6xl flex-col gap-8 md:flex-row">
         <motion.div
-          className="flex-1 rounded-lg bg-gray-900 p-8 shadow-lg"
+          className="flex-1 rounded-lg bg-zinc-900 p-8 shadow-lg"
           variants={formVariants}
           initial="hidden"
           whileInView="visible"

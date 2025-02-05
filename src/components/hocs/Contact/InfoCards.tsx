@@ -57,7 +57,7 @@ export default function InfoCards() {
         {cards.map((card, index) => (
           <motion.div
             key={index}
-            className="rounded-lg bg-gray-900 p-6 shadow-lg"
+            className="rounded-lg bg-zinc-900 p-6 shadow-lg"
             variants={cardVariants}
             whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
           >
