@@ -1,5 +1,12 @@
-import { MobileAppPricingCard } from "@/components/hocs/Pricing-Page/MobileAppPricing";
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { PricingCard } from "@/components/hocs/Pricing-Page/PricingCard";
+import { MobileAppPricingCard } from "@/components/hocs/Pricing-Page/MobileAppPricing";
+import { AnimatedSectionHeader } from "@/components/hocs/Pricing-Page/AnimatedSectionHeader";
+import { PricingNavigation } from "@/components/hocs/Pricing-Page/PricingNavigation";
+
 const plans = [
   {
     name: "Basic",
@@ -166,78 +173,133 @@ const mobileAppAddOns = [
 ];
 
 export default function PricingPage() {
-  return (
-    <>
-      <div className="min-h-screen py-20 px-4">
-        <div className="max-w-6xl mx-auto space-y-12">
-          <div className="text-center space-y-4">
-            <h1 className="text-4xl font-bold text-text-200">
-              Web Development Pricing Packages
-            </h1>
-            <p className="text-text-300 max-w-2xl mx-auto">
-              Choose the perfect package for your web development needs. From
-              small businesses to large enterprises, we have a solution for you.
+  const [activeSection, setActiveSection] = useState<"web" | "mobile">("web");
+
+  const renderAddOns = (addOns: any[], title: string) => (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.6, duration: 0.5 }}
+      className="mt-12"
+    >
+      <h2 className="text-2xl font-bold mb-4">{title}</h2>
+      <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 text-blue-300">
+        {addOns.map((addon, index) => (
+          <motion.div
+            key={addon.name}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 * index, duration: 0.5 }}
+            className="bg-zinc-900 rounded-lg p-4 border border-zinc-800"
+          >
+            <h3 className="font-medium">{addon.name}</h3>
+            <p className="text-zinc-400">
+              {addon.price ? `$${addon.price}+ ${addon.unit}` : addon.unit}
             </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {plans.map((plan) => (
-              <PricingCard key={plan.name} {...plan} />
-            ))}
-          </div>
-
-          <div className="mt-12">
-            <h2 className="text-2xl font-bold mb-4">Add-Ons</h2>
-            <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 text-blue-300">
-              {addOns.map((addon) => (
-                <div
-                  key={addon.name}
-                  className="bg-zinc-900 rounded-lg p-4 border border-zinc-800"
-                >
-                  <h3 className="font-medium">{addon.name}</h3>
-                  <p className="text-zinc-400">
-                    {addon.price ? `$${addon.price} ${addon.unit}` : addon.unit}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+          </motion.div>
+        ))}
       </div>
-      <div className="mb-52">
-        <div className="text-center space-y-4 mb-12">
-          <h1 className="text-4xl font-bold">
-            Mobile App Development Pricing Packages
-          </h1>
-          <p className="text-text-300 max-w-2xl mx-auto">
-            From MVPs to enterprise-level applications, we offer tailored mobile
-            app development solutions to meet your needs and budget.
-          </p>
-        </div>
+    </motion.div>
+  );
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {mobileAppPlans.map((plan) => (
-            <MobileAppPricingCard key={plan.name} {...plan} />
-          ))}
-        </div>
+  return (
+    <div className=" py-20 px-4  text-white">
+      <div className="max-w-6xl mx-auto space-y-12">
+        <PricingNavigation
+          activeSection={activeSection}
+          onSectionChange={setActiveSection}
+        />
 
-        <div className="mt-12">
-          <h2 className="text-2xl font-bold mb-4">Mobile App Add-Ons</h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
-            {mobileAppAddOns.map((addon) => (
-              <div
-                key={addon.name}
-                className="bg-zinc-900 rounded-lg p-4 border text-blue-300 border-zinc-800"
+        <AnimatePresence mode="wait">
+          {activeSection === "web" && (
+            <motion.div
+              key="web"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 20 }}
+              transition={{ duration: 0.5 }}
+            >
+              <AnimatedSectionHeader
+                title="Web Development Pricing Packages"
+                description="Choose the perfect package for your web development needs. From small businesses to large enterprises, we have a solution for you."
+              />
+
+              <motion.div
+                className="grid md:grid-cols-3 gap-8"
+                initial="hidden"
+                animate="visible"
+                variants={{
+                  hidden: { opacity: 0 },
+                  visible: {
+                    opacity: 1,
+                    transition: {
+                      staggerChildren: 0.1,
+                    },
+                  },
+                }}
               >
-                <h3 className="font-medium">{addon.name}</h3>
-                <p className="text-zinc-400">
-                  ${addon.price}+ {addon.unit}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
+                {plans.map((plan, index) => (
+                  <motion.div
+                    key={plan.name}
+                    variants={{
+                      hidden: { opacity: 0, y: 20 },
+                      visible: { opacity: 1, y: 0 },
+                    }}
+                  >
+                    <PricingCard {...plan} />
+                  </motion.div>
+                ))}
+              </motion.div>
+
+              {renderAddOns(addOns, "Web Development Add-Ons")}
+            </motion.div>
+          )}
+
+          {activeSection === "mobile" && (
+            <motion.div
+              key="mobile"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 20 }}
+              transition={{ duration: 0.5 }}
+            >
+              <AnimatedSectionHeader
+                title="Mobile App Development Pricing Packages"
+                description="From MVPs to enterprise-level applications, we offer tailored mobile app development solutions to meet your needs and budget."
+              />
+
+              <motion.div
+                className="grid md:grid-cols-3 gap-8"
+                initial="hidden"
+                animate="visible"
+                variants={{
+                  hidden: { opacity: 0 },
+                  visible: {
+                    opacity: 1,
+                    transition: {
+                      staggerChildren: 0.1,
+                    },
+                  },
+                }}
+              >
+                {mobileAppPlans.map((plan, index) => (
+                  <motion.div
+                    key={plan.name}
+                    variants={{
+                      hidden: { opacity: 0, y: 20 },
+                      visible: { opacity: 1, y: 0 },
+                    }}
+                  >
+                    <MobileAppPricingCard {...plan} />
+                  </motion.div>
+                ))}
+              </motion.div>
+
+              {renderAddOns(mobileAppAddOns, "Mobile App Add-Ons")}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-    </>
+    </div>
   );
 }
