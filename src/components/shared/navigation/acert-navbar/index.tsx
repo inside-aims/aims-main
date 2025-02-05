@@ -53,7 +53,7 @@ const Navbar = ({ className }: { className?: string }) => {
           <Link href="/">Home</Link>
           <Link href="/services">Services</Link>
           <Link href="/products">Products</Link>
-          <Link href="/price">Pricing</Link>
+          <Link href="/price-page">Pricing</Link>
           <Link href="/contact">Contact</Link>
 
           {/* <MenuItem
