@@ -12,7 +12,7 @@ const products = [
     name: "Aims Achievers Network",
     tagline: "Honoring Outstanding Achievements in Academia",
     description: "E-voting platform honoring academic excellence.",
-    image: "/assets/images/advice-1.jpg",
+    image: "/assets/images/AAN.webp",
     color: {
       accent: "#FF4D00",
       text: "#E8D5C4",
@@ -20,10 +20,11 @@ const products = [
   },
   {
     id: 2,
-    name: "DataSense AI",
-    tagline: "Intelligent Analytics Platform",
+    name: "Xolace",
+    tagline:
+      "A Judgement Free Community Aims To Eliminate Depression And Anxiety.",
     description: "Transform raw data into actionable business intelligence",
-    image: "/placeholder.svg?height=600&width=400",
+    image: "/assets/images/Xolace.webp",
     color: {
       accent: "#00FF94",
       text: "#E8D5C4",

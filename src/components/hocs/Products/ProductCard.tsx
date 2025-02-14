@@ -166,9 +166,9 @@ export default function ProductCard({
             <Image
               src={product.image}
               alt={product.name}
-              width={400}
-              height={600}
-              className="size-auto object-contain"
+              width={900}
+              height={900}
+              className="size-auto object-fill"
             />
           </motion.div>
 
