@@ -57,7 +57,7 @@ const ServicesPage = () => {
   return (
     <div className="text-white">
       {/* Hero Section */}
-      <section className="relative overflow-hidden px-6 pt-16 lg:px-8">
+      <section className="relative overflow-hidden px-4 sm:px-6 pt-16 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -66,7 +66,7 @@ const ServicesPage = () => {
         >
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-8">
             <div className="max-w-2xl">
-              <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
+              <h1 className="text-3xl sm:text-4xl font-bold tracking-tight sm:text-6xl">
                 <span className="block text-text-200">
                   Transform your ideas into
                 </span>
@@ -74,11 +74,11 @@ const ServicesPage = () => {
                   digital excellence
                 </span>
               </h1>
-              <p className="mt-6 text-lg leading-8 text-text-300">
+              <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-7 sm:leading-8 text-text-300">
                 We deliver cutting-edge technology solutions that drive
                 innovation and growth for businesses of all sizes.
               </p>
-              <div className="mt-10 flex items-center gap-6">
+              <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -95,12 +95,11 @@ const ServicesPage = () => {
                     {[...Array(5)].map((_, i) => (
                       <div
                         key={i}
-                        className="inline-block size-8 rounded-full bg-gradient-to-r from-green-400 to-emerald-500"
-                        // black:bg-gradient-to-r from-gray-700 to-gray-600 ring-2 ring-black dark mode
+                        className="inline-block size-6 sm:size-8 rounded-full bg-gradient-to-r from-green-400 to-emerald-500"
                       />
                     ))}
                   </div>
-                  <span className="text-sm text-text-300">
+                  <span className="text-xs sm:text-sm text-text-300">
                     <strong className="text-text-300">500+</strong> Happy
                     Clients
                   </span>
@@ -112,15 +111,15 @@ const ServicesPage = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1 }}
-                className="relative h-[600px] w-full"
+                className="relative h-[300px] sm:h-[400px] lg:h-[600px] w-full"
               >
-                <div className="absolute right-0 top-0 h-[500px] w-[300px] rounded-xl bg-gradient-to-br from-green-400/20 to-emerald-500/20 backdrop-blur-3xl" />
+                <div className="absolute right-0 top-0 h-[250px] sm:h-[350px] lg:h-[500px] w-[200px] sm:w-[250px] lg:w-[300px] rounded-xl bg-gradient-to-br from-green-400/20 to-emerald-500/20 backdrop-blur-3xl" />
                 <Image
                   src="/assets/images/services.jpg"
                   alt="Interface mockup"
                   width={400}
                   height={600}
-                  className="absolute right-8 top-8 rounded-xl shadow-2xl"
+                  className="absolute right-4 sm:right-8 top-4 sm:top-8 rounded-xl shadow-2xl w-[180px] sm:w-[250px] lg:w-[400px] h-auto"
                 />
               </motion.div>
             </div>
@@ -129,7 +128,10 @@ const ServicesPage = () => {
       </section>
 
       {/* Services Grid */}
-      <section id="services" className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+      <section
+        id="services"
+        className="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-24 lg:px-8"
+      >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -137,15 +139,15 @@ const ServicesPage = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h2 className="text-3xl font-bold tracking-tight text-text-200 sm:text-4xl">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-text-200 sm:text-4xl">
             Our Services
           </h2>
-          <p className="mt-4 text-text-300">
+          <p className="mt-4 text-sm sm:text-base text-text-300">
             Comprehensive solutions for your digital needs
           </p>
         </motion.div>
 
-        {/* <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 sm:mt-16 grid gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <motion.div
               key={service.id}
@@ -154,39 +156,7 @@ const ServicesPage = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -5 }}
-              className="group relative overflow-hidden rounded-2xl p-8 backdrop-blur-xl bg-gradient-to-r from-green-400 to-emerald-500"
-              // bg-gradient-to-r from-green-400 to-emerald-500
-              //  bg-text-300/50
-            >
-              <div className="relative z-10">
-                <div
-                  className={`mb-4 inline-block rounded-lg bg-gradient-to-r ${service.color} p-3`}
-                >
-                  {service.icon}
-                </div>
-                <h3 className="mb-2 text-xl font-semibold">{service.title}</h3>
-                <p className="text-gray-400">{service.description}</p>
-                <Link
-                  href={`/services/${service.id}`}
-                  className="mt-4 inline-flex items-center text-sm text-green-400 hover:text-green-300"
-                >
-                  Learn more <ArrowRight className="ml-1 h-4 w-4" />
-                </Link>
-              </div>
-              <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-gradient-to-br from-green-400/10 to-emerald-500/10 blur-2xl transition-all duration-300 group-hover:scale-150" />
-            </motion.div>
-          ))}
-        </div> */}
-        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -5 }}
-              className="group relative overflow-hidden rounded-2xl bg-white p-8 shadow-md transition-shadow duration-300 hover:shadow-lg"
+              className="group relative overflow-hidden rounded-2xl bg-white p-6 sm:p-8 shadow-md transition-shadow duration-300 hover:shadow-lg"
             >
               <div className="relative z-10">
                 <div
@@ -194,18 +164,20 @@ const ServicesPage = () => {
                 >
                   {service.icon}
                 </div>
-                <h3 className="mb-2 text-xl font-semibold text-gray-800">
+                <h3 className="mb-2 text-lg sm:text-xl font-semibold text-gray-800">
                   {service.title}
                 </h3>
-                <p className="text-gray-600">{service.description}</p>
+                <p className="text-sm sm:text-base text-gray-600">
+                  {service.description}
+                </p>
                 <Link
                   href={`/services/${service.id}`}
-                  className="mt-4 inline-flex items-center text-sm font-medium text-emerald-600 hover:text-emerald-700"
+                  className="mt-4 inline-flex items-center text-xs sm:text-sm font-medium text-emerald-600 hover:text-emerald-700"
                 >
-                  Learn more <ArrowRight className="ml-1 size-4" />
+                  Learn more <ArrowRight className="ml-1 size-3 sm:size-4" />
                 </Link>
               </div>
-              <div className="absolute -right-10 -top-10 size-40 rounded-full bg-gradient-to-br from-emerald-100 to-green-100 opacity-50 transition-all duration-300 group-hover:scale-150" />
+              <div className="absolute -right-10 -top-10 size-32 sm:size-40 rounded-full bg-gradient-to-br from-emerald-100 to-green-100 opacity-50 transition-all duration-300 group-hover:scale-150" />
             </motion.div>
           ))}
         </div>
@@ -214,8 +186,8 @@ const ServicesPage = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="border-t border-text-300 ">
-        <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+      <section className="border-t border-text-300">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-24 lg:px-8">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { label: "Projects Delivered", value: "500+" },
@@ -231,10 +203,12 @@ const ServicesPage = () => {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="text-4xl font-bold text-green-400">
+                <div className="text-3xl sm:text-4xl font-bold text-green-400">
                   {stat.value}
                 </div>
-                <div className="mt-2 text-gray-400">{stat.label}</div>
+                <div className="mt-2 text-sm sm:text-base text-gray-400">
+                  {stat.label}
+                </div>
               </motion.div>
             ))}
           </div>

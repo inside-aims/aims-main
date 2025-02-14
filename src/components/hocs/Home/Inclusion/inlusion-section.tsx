@@ -15,15 +15,17 @@ export function InclusionsSection() {
       ref={sectionRef}
       initial={{ opacity: 0, y: 100 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.8 }}
+      exit={{ opacity: 0, y: 50 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
       className="mx-4 mb-24 overflow-hidden rounded-3xl bg-text-200 lg:mx-8"
     >
       <div className="container relative mx-auto px-4 py-16">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+          {/* Text Section */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ delay: 0.2, duration: 0.8 }}
+            transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
             className="space-y-6"
           >
             <h2 className="font-serif text-4xl text-text-100">
@@ -36,21 +38,26 @@ export function InclusionsSection() {
               integrations through our products.
             </p>
 
-            <Link href={"/products"}>
-              <motion.div whileHover={{ rotate: 2 }} whileTap={{ scale: 0.95 }}>
+            <Link href="/products">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <Button
                   variant="secondary"
-                  className="mt-4 bg-text-100 text-text-200"
+                  className="mt-4 bg-text-100 text-text-200 hover:bg-opacity-80 transition-all"
                 >
                   View Products
                 </Button>
               </motion.div>
             </Link>
           </motion.div>
+
+          {/* Image Section */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ delay: 0.4, duration: 0.8 }}
+            transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
             className="relative h-[400px] overflow-hidden rounded-2xl"
           >
             <Image
@@ -58,6 +65,7 @@ export function InclusionsSection() {
               alt="Luxury kitchen interior"
               fill
               className="object-cover"
+              priority
             />
           </motion.div>
         </div>

@@ -4,7 +4,8 @@
 import createGlobe from "cobe";
 import { motion, useAnimation, useInView } from "framer-motion";
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import type React from "react";
+import { useEffect, useRef } from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -48,21 +49,23 @@ export default function FeaturedSection() {
         "Share your thoughts and experiences with millions of users anonymously",
       skeleton: <SkeletonOne />,
       className:
-        "col-span-1 lg:col-span-4 border-b lg:border-r dark:border-neutral-800",
+        "col-span-1 md:col-span-2 lg:col-span-4 border-b md:border-r dark:border-neutral-800",
     },
     {
       title: "Gain Expert help",
       description:
         "Not only about connecting and having fun but also gaining expert help and advice.",
       skeleton: <SkeletonTwo />,
-      className: "border-b col-span-1 lg:col-span-2 dark:border-neutral-800",
+      className:
+        "border-b col-span-1 md:col-span-2 lg:col-span-2 dark:border-neutral-800",
     },
     {
       title: "Connecting diverse users around the world",
       description:
         "Build meaningful connections in a supportive, inclusive digital environment.",
       skeleton: <SkeletonFour />,
-      className: "col-span-1 lg:col-span-6 border-b lg:border-none",
+      className:
+        "col-span-1 md:col-span-2 lg:col-span-6 border-b md:border-none",
     },
   ];
 
@@ -98,13 +101,13 @@ export default function FeaturedSection() {
     >
       <div className="px-8">
         <GradualSpacing
-          className="mx-auto max-w-5xl text-center text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl"
+          className="mx-auto max-w-5xl text-center text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl"
           text="Innovating Connections, Building Safe Spaces"
         />
 
         <motion.p
           variants={itemVariants}
-          className="mx-auto max-w-2xl text-center text-lg font-normal text-text-200 dark:text-neutral-300"
+          className="mx-auto max-w-2xl text-center text-base sm:text-lg font-normal text-text-200 dark:text-neutral-300"
         >
           At AIMS, we are dedicated to crafting groundbreaking solutions like
           Xolace to empower people, foster connections, and create spaces where
@@ -116,7 +119,7 @@ export default function FeaturedSection() {
       <div className="relative mt-16">
         <motion.div
           variants={containerVariants}
-          className="grid grid-cols-1 gap-8 rounded-lg bg-text-200/5 p-8 backdrop-blur-lg dark:bg-black/5 lg:grid-cols-6"
+          className="grid grid-cols-1 gap-4 sm:gap-6 lg:gap-8 rounded-lg bg-text-200/5 p-4 sm:p-6 lg:p-8 backdrop-blur-lg dark:bg-black/5 md:grid-cols-2 lg:grid-cols-6"
         >
           {features.map((feature, index) => (
             <FeatureCard
@@ -150,7 +153,7 @@ const FeatureCard = motion(
       <motion.div
         variants={variants}
         className={cn(
-          `overflow-hidden rounded-lg bg-text-100/5 p-6 shadow-lg transition-all duration-300 hover:shadow-xl dark:bg-neutral-800`,
+          `overflow-hidden rounded-lg bg-text-100/5 p-4 sm:p-6 shadow-lg transition-all duration-300 hover:shadow-xl dark:bg-neutral-800`,
           className
         )}
         whileHover={{ scale: 1.02 }}
@@ -163,7 +166,7 @@ const FeatureCard = motion(
 
 const FeatureTitle = ({ children }: { children?: React.ReactNode }) => {
   return (
-    <h3 className="mb-3 text-xl font-semibold tracking-tight text-text-200 dark:text-white md:text-2xl">
+    <h3 className="mb-2 sm:mb-3 text-lg sm:text-xl font-semibold tracking-tight text-text-200 dark:text-white md:text-2xl">
       {children}
     </h3>
   );
@@ -171,7 +174,7 @@ const FeatureTitle = ({ children }: { children?: React.ReactNode }) => {
 
 const FeatureDescription = ({ children }: { children?: React.ReactNode }) => {
   return (
-    <p className="text-sm text-text-200 dark:text-neutral-300 md:text-base">
+    <p className="text-xs sm:text-sm text-text-200 dark:text-neutral-300 md:text-base">
       {children}
     </p>
   );
@@ -192,7 +195,11 @@ const SkeletonOne = () => {
         className="absolute inset-0"
         initial={{ rotate: 0 }}
         animate={{ rotate: 360 }}
-        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        transition={{
+          duration: 20,
+          repeat: Number.POSITIVE_INFINITY,
+          ease: "linear",
+        }}
       >
         <div className="size-full rounded-full border-4 border-white/30" />
       </motion.div>
@@ -230,7 +237,7 @@ const SkeletonTwo = () => {
             className="overflow-hidden rounded-lg shadow-md"
           >
             <Image
-              src={image}
+              src={image || "/placeholder.svg"}
               alt={`Expert help image ${idx + 1}`}
               width={100}
               height={100}
@@ -245,7 +252,7 @@ const SkeletonTwo = () => {
 
 const SkeletonFour = () => {
   return (
-    <div className="relative mt-4 flex h-[400px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-blue-400 to-purple-500">
+    <div className="relative mt-4 flex h-[300px] sm:h-[350px] md:h-[400px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-blue-400 to-purple-500">
       <Globe className="absolute inset-0" />
       <motion.div
         className="z-10 text-center text-white"

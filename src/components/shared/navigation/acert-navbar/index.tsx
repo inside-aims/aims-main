@@ -1,23 +1,28 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable no-unused-vars */
 "use client";
+
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
-
-import {
-  HoveredLink,
-  Menu,
-  MenuItem,
-  ProductItem,
-} from "@/components/ui/navbar-menu";
+import { useState } from "react";
+import { MenuIcon, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 import { Theme } from "../navbar/Theme-toggler";
 
 const Navbar = ({ className }: { className?: string }) => {
   const [active, setActive] = useState<string | null>(null);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+
+  const menuItems = [
+    { href: "/", label: "Home" },
+    { href: "/services", label: "Services" },
+    { href: "/products", label: "Products" },
+    { href: "/price-page", label: "Pricing" },
+    { href: "/contact", label: "Contact" },
+  ];
+
   return (
     <motion.div
       initial={{
@@ -32,96 +37,82 @@ const Navbar = ({ className }: { className?: string }) => {
         delay: 0.7,
         duration: 0.34,
       }}
-      typeof="spring"
-      className={cn("fixed top-0 inset-x-0 max-w-1xl mx-auto z-50", className)}
+      className={cn(
+        "fixed top-0 inset-x-0 z-50 bg-white dark:bg-gray-900",
+        className
+      )}
     >
-      <Menu setActive={setActive}>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-        >
-          <Image
-            src="/assets/images/AIMS.png"
-            width={60}
-            height={60}
-            alt="AIMS logo"
-          />
-        </motion.div>
-
-        <div className="flex gap-5 space-x-4">
-          <Link href="/">Home</Link>
-          <Link href="/services">Services</Link>
-          <Link href="/products">Products</Link>
-          <Link href="/price-page">Pricing</Link>
-          <Link href="/contact">Contact</Link>
-
-          {/* <MenuItem
-            setActive={setActive}
-            active={active}
-            item="Services"
-            wait={0}
-          >
-            <div className="flex flex-col space-y-4 text-sm">
-              <HoveredLink href="/services"> Services</HoveredLink>
-              <HoveredLink href="/web-dev">Web Development</HoveredLink>
-              <HoveredLink href="/interface-design">
-                Interface Design
-              </HoveredLink>
-              <HoveredLink href="/seo">Search Engine Optimization</HoveredLink>
-              <HoveredLink href="/branding">Branding</HoveredLink>
-            </div>
-          </MenuItem>
-          <MenuItem
-            setActive={setActive}
-            active={active}
-            item="Products"
-            wait={0.5}
-          >
-            <div className="  grid grid-cols-2 gap-10 p-4 text-sm">
-              <ProductItem
-                title="Algochurn"
-                href="/products"
-                src="https://assets.aceternity.com/demos/algochurn.webp"
-                description="Prepare for tech interviews like never before."
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center py-4 md:justify-start md:space-x-10">
+          <div className="flex justify-start lg:w-0 lg:flex-1">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+            >
+              <Image
+                src="/assets/images/AIMS.png"
+                width={60}
+                height={60}
+                alt="AIMS logo"
               />
-              <ProductItem
-                title="Tailwind Master Kit"
-                href="https://tailwindmasterkit.com"
-                src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
-                description="Production ready Tailwind css components for your next project"
-              />
-              <ProductItem
-                title="Moonbeam"
-                href="https://gomoonbeam.com"
-                src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
-                description="Never write from scratch again. Go from idea to blog in minutes."
-              />
-              <ProductItem
-                title="Rogue"
-                href="https://userogue.com"
-                src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
-                description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
-              />
-            </div>
-          </MenuItem>
-          <MenuItem
-            setActive={setActive}
-            active={active}
-            item="Pricing"
-            wait={0.7}
-          >
-            <div className="flex flex-col space-y-4 text-sm">
-              <HoveredLink href="/hobby">Hobby</HoveredLink>
-              <HoveredLink href="/individual">Individual</HoveredLink>
-              <HoveredLink href="/team">Team</HoveredLink>
-              <HoveredLink href="/enterprise">Enterprise</HoveredLink>
-            </div>
-          </MenuItem> */}
+            </motion.div>
+          </div>
+          <div className="-mr-2 -my-2 md:hidden">
+            <button
+              type="button"
+              className="bg-white dark:bg-gray-900 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+              onClick={toggleMenu}
+            >
+              <span className="sr-only">Open menu</span>
+              {isOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <MenuIcon className="h-6 w-6" />
+              )}
+            </button>
+          </div>
+          <nav className="hidden md:flex space-x-10">
+            {menuItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-base font-medium text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+          <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+            <Theme />
+          </div>
         </div>
+      </div>
 
-        <Theme />
-      </Menu>
+      {/* Mobile menu */}
+      <div
+        className={`${
+          isOpen ? "block" : "hidden"
+        } md:hidden absolute top-full left-0 w-full bg-white dark:bg-gray-900 shadow-lg`}
+      >
+        <div className="pt-2 pb-3 space-y-1">
+          {menuItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-700"
+              onClick={toggleMenu}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
+        <div className="pt-4 pb-3 border-t border-gray-200 dark:border-gray-700">
+          <div className="flex items-center px-5">
+            <Theme />
+          </div>
+        </div>
+      </div>
     </motion.div>
   );
 };
