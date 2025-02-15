@@ -4,7 +4,6 @@ import { motion, useTransform, MotionValue } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { StaticImageData } from "next/image";
 import Image from "next/image";
-import advice1 from "@public/assets/images/advice-1.jpg";
 
 interface Product {
   id: number;

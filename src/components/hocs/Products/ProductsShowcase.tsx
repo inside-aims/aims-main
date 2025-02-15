@@ -25,34 +25,34 @@ const products = [
     tagline:
       "A Judgement Free Community Aims To Eliminate Depression And Anxiety.",
     description: "Transform raw data into actionable business intelligence",
-    image: "/assets/images/Xolace.webp",
+    image: "/assets/images/xolaceimage.webp",
     color: {
       accent: "#00FF94",
       text: "#E8D5C4",
     },
   },
-  {
-    id: 3,
-    name: "SecureShield",
-    tagline: "Enterprise Security Suite",
-    description: "Advanced protection for your digital assets",
-    image: "/placeholder.svg?height=600&width=400",
-    color: {
-      accent: "#FF00E5",
-      text: "#E8D5C4",
-    },
-  },
-  {
-    id: 4,
-    name: "CloudNexus",
-    tagline: "Cloud Infrastructure Platform",
-    description: "Scale your infrastructure with confidence",
-    image: "/placeholder.svg?height=600&width=400",
-    color: {
-      accent: "#0094FF",
-      text: "#E8D5C4",
-    },
-  },
+  // {
+  //   id: 3,
+  //   name: "SecureShield",
+  //   tagline: "Enterprise Security Suite",
+  //   description: "Advanced protection for your digital assets",
+  //   image: "/placeholder.svg?height=600&width=400",
+  //   color: {
+  //     accent: "#FF00E5",
+  //     text: "#E8D5C4",
+  //   },
+  // },
+  // {
+  //   id: 4,
+  //   name: "CloudNexus",
+  //   tagline: "Cloud Infrastructure Platform",
+  //   description: "Scale your infrastructure with confidence",
+  //   image: "/placeholder.svg?height=600&width=400",
+  //   color: {
+  //     accent: "#0094FF",
+  //     text: "#E8D5C4",
+  //   },
+  // },
 ];
 
 export default function ProductsShowcase() {
@@ -88,7 +88,7 @@ export default function ProductsShowcase() {
   return (
     <div
       ref={containerRef}
-      className="relative top-[-30vh] px-4 sm:px-8 md:px-12 lg:px-16"
+      className="relative top-[-20vh] px-4 sm:px-8 md:px-12 lg:px-16"
     >
       <FloatingElements scrollYProgress={scrollYProgress} />
       <motion.div
