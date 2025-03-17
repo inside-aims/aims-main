@@ -2,8 +2,9 @@
 
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
-import { useRef } from "react";
 import Link from "next/link";
+import { useRef } from "react";
+
 import { Button } from "@/components/ui/button";
 
 export function InclusionsSection() {
@@ -17,7 +18,7 @@ export function InclusionsSection() {
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       exit={{ opacity: 0, y: 50 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="mx-4 mb-24 overflow-hidden rounded-sm bg-text-200 lg:mx-8 px-10"
+      className="mx-4 mb-24 overflow-hidden rounded-sm bg-text-200 px-10 lg:mx-8"
     >
       <div className="container relative mx-auto px-4 py-16">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
@@ -42,7 +43,7 @@ export function InclusionsSection() {
               <div>
                 <Button
                   variant="secondary"
-                  className="mt-4 bg-text-100 text-text-200 hover:bg-opacity-80 transition-all hover:scale-105"
+                  className="mt-4 bg-text-100 text-text-200 transition-all hover:scale-105 hover:bg-opacity-80"
                 >
                   View Products
                 </Button>

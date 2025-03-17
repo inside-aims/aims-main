@@ -2,8 +2,8 @@
 
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
-import { useRef } from "react";
 import Link from "next/link";
+import { useRef } from "react";
 
 import { Button } from "@/components/ui/button";
 
@@ -65,7 +65,7 @@ export function DreamSection() {
           {/* Button */}
           <Link href="/contact">
             <motion.div whileTap={{ scale: 0.95 }}>
-              <Button className="mt-8 bg-text-200 text-text-100 transition-all hover:bg-opacity-80 hover:scale-105 duration-150">
+              <Button className="mt-8 bg-text-200 text-text-100 transition-all duration-150 hover:scale-105 hover:bg-opacity-80">
                 Get in touch
               </Button>
             </motion.div>

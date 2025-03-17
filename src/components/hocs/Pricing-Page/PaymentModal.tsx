@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, Fragment } from "react";
-import Image from "next/image";
 import { Dialog, Transition } from "@headlessui/react";
+import Image from "next/image";
+import { useState, Fragment } from "react";
+
 import { Button } from "@/components/ui/button";
 
 interface PaymentMethod {
@@ -82,10 +83,10 @@ export function PaymentModal({ isOpen, onClose, plan }: PaymentModalProps) {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-zinc-900 p-6 text-left align-middle shadow-xl transition-all">
+              <Dialog.Panel className="w-full max-w-md overflow-hidden rounded-2xl bg-zinc-900 p-6 text-left align-middle shadow-xl transition-all">
                 <Dialog.Title
                   as="h3"
-                  className="text-lg font-medium leading-6 text-white mb-4"
+                  className="mb-4 text-lg font-medium leading-6 text-white"
                 >
                   Choose payment method
                 </Dialog.Title>
@@ -112,7 +113,7 @@ export function PaymentModal({ isOpen, onClose, plan }: PaymentModalProps) {
                       {paymentMethods.map((method) => (
                         <label
                           key={method.id}
-                          className={`flex items-center justify-between px-4 py-3 border rounded-lg cursor-pointer transition-colors ${
+                          className={`flex cursor-pointer items-center justify-between rounded-lg border px-4 py-3 transition-colors ${
                             selectedMethod === method.id
                               ? "border-blue-600 bg-blue-600/10"
                               : "border-zinc-800 hover:border-zinc-700"
@@ -125,7 +126,7 @@ export function PaymentModal({ isOpen, onClose, plan }: PaymentModalProps) {
                               value={method.id}
                               checked={selectedMethod === method.id}
                               onChange={() => setSelectedMethod(method.id)}
-                              className="text-blue-600 focus:ring-blue-500 h-4 w-4 border-zinc-700"
+                              className="size-4 border-zinc-700 text-blue-600 focus:ring-blue-500"
                             />
                             <div className="space-y-1">
                               <div className="font-medium text-white">
@@ -136,7 +137,7 @@ export function PaymentModal({ isOpen, onClose, plan }: PaymentModalProps) {
                               </div>
                             </div>
                           </div>
-                          <div className="h-8 w-20 relative">
+                          <div className="relative h-8 w-20">
                             <Image
                               src={method.logo || "/placeholder.svg"}
                               alt={method.name}

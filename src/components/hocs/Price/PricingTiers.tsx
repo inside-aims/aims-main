@@ -68,7 +68,7 @@ const featureVariants = {
 export default function PricingTiers() {
   return (
     <div className="space-y-12 sm:space-y-0 sm:grid sm:grid-cols-3 sm:gap-6 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:mx-0">
-      {tiers.map((tier, index) => (
+      {tiers.map((tier) => (
         <motion.div
           key={tier.name}
           variants={tierVariants}

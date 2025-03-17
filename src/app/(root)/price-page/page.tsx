@@ -1,10 +1,12 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { PricingCard } from "@/components/hocs/Pricing-Page/PricingCard";
-import { MobileAppPricingCard } from "@/components/hocs/Pricing-Page/MobileAppPricing";
+import { useState } from "react";
+
 import { AnimatedSectionHeader } from "@/components/hocs/Pricing-Page/AnimatedSectionHeader";
+import { MobileAppPricingCard } from "@/components/hocs/Pricing-Page/MobileAppPricing";
+import { PricingCard } from "@/components/hocs/Pricing-Page/PricingCard";
 import { PricingNavigation } from "@/components/hocs/Pricing-Page/PricingNavigation";
 
 const plans = [
@@ -182,15 +184,15 @@ export default function PricingPage() {
       transition={{ delay: 0.6, duration: 0.5 }}
       className="mt-12"
     >
-      <h2 className="text-2xl font-bold mb-4">{title}</h2>
-      <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 text-blue-300">
+      <h2 className="mb-4 text-2xl font-bold">{title}</h2>
+      <div className="grid gap-4 text-blue-300 sm:grid-cols-2 md:grid-cols-4">
         {addOns.map((addon, index) => (
           <motion.div
             key={addon.name}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 * index, duration: 0.5 }}
-            className="bg-zinc-900 rounded-lg p-4 border border-zinc-800"
+            className="rounded-lg border border-zinc-800 bg-zinc-900 p-4"
           >
             <h3 className="font-medium">{addon.name}</h3>
             <p className="text-zinc-400">
@@ -203,8 +205,8 @@ export default function PricingPage() {
   );
 
   return (
-    <div className=" py-20 px-4  text-white">
-      <div className="max-w-6xl mx-auto space-y-12">
+    <div className=" px-4 py-20  text-white">
+      <div className="mx-auto max-w-6xl space-y-12">
         <PricingNavigation
           activeSection={activeSection}
           onSectionChange={setActiveSection}
@@ -225,7 +227,7 @@ export default function PricingPage() {
               />
 
               <motion.div
-                className="grid md:grid-cols-3 gap-8"
+                className="grid gap-8 md:grid-cols-3"
                 initial="hidden"
                 animate="visible"
                 variants={{
@@ -238,7 +240,7 @@ export default function PricingPage() {
                   },
                 }}
               >
-                {plans.map((plan, index) => (
+                {plans.map((plan) => (
                   <motion.div
                     key={plan.name}
                     variants={{
@@ -269,7 +271,7 @@ export default function PricingPage() {
               />
 
               <motion.div
-                className="grid md:grid-cols-3 gap-8"
+                className="grid gap-8 md:grid-cols-3"
                 initial="hidden"
                 animate="visible"
                 variants={{
@@ -282,7 +284,7 @@ export default function PricingPage() {
                   },
                 }}
               >
-                {mobileAppPlans.map((plan, index) => (
+                {mobileAppPlans.map((plan) => (
                   <motion.div
                     key={plan.name}
                     variants={{

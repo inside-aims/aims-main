@@ -1,8 +1,10 @@
 "use client";
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import { Check, X } from "lucide-react";
+import { useState } from "react";
+
+import { Button } from "@/components/ui/button";
+
 import { PaymentModal } from "./PaymentModal";
 interface Feature {
   text: string;
@@ -33,9 +35,9 @@ export function PricingCard({
 
   return (
     <>
-      <div className="relative p-6 bg-zinc-900 rounded-lg border border-zinc-800">
+      <div className="relative rounded-lg border border-zinc-800 bg-zinc-900 p-6">
         {featured && (
-          <div className="absolute -top-2 right-4 bg-white text-black px-3 py-1 rounded-full text-sm font-medium">
+          <div className="absolute -top-2 right-4 rounded-full bg-white px-3 py-1 text-sm font-medium text-black">
             Featured
           </div>
         )}
@@ -71,7 +73,7 @@ export function PricingCard({
               if (typeof feature === "string") {
                 return (
                   <li key={index} className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-blue-500 mt-0.5 flex-shrink-0" />
+                    <Check className="mt-0.5 size-5 shrink-0 text-blue-500" />
                     <span className="text-sm text-zinc-300">{feature}</span>
                   </li>
                 );
@@ -79,16 +81,16 @@ export function PricingCard({
                 return (
                   <li key={index} className="flex items-start gap-2">
                     {feature.available ? (
-                      <Check className="h-5 w-5 text-blue-500 mt-0.5 flex-shrink-0" />
+                      <Check className="mt-0.5 size-5 shrink-0 text-blue-500" />
                     ) : (
-                      <X className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+                      <X className="mt-0.5 size-5 shrink-0 text-red-500" />
                     )}
                     <span
                       className={`text-sm ${feature.available ? "text-zinc-300" : "text-zinc-500"}`}
                     >
                       {feature.text}
                       {feature.new && (
-                        <span className="ml-2 inline-block bg-blue-500 text-black text-xs px-1 rounded">
+                        <span className="ml-2 inline-block rounded bg-blue-500 px-1 text-xs text-black">
                           NEW
                         </span>
                       )}

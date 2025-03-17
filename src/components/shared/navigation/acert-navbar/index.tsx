@@ -1,16 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { MenuIcon, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { MenuIcon, X } from "lucide-react";
+
 import { cn } from "@/lib/utils";
 
 import { Theme } from "../navbar/Theme-toggler";
 
 const Navbar = ({ className }: { className?: string }) => {
-  const [active, setActive] = useState<string | null>(null);
+  // const [active, setActive] = useState<string | null>(null);
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -42,8 +43,8 @@ const Navbar = ({ className }: { className?: string }) => {
         className
       )}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4 md:justify-start md:space-x-10">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between py-4 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <motion.div
               initial={{ opacity: 0 }}
@@ -58,21 +59,21 @@ const Navbar = ({ className }: { className?: string }) => {
               />
             </motion.div>
           </div>
-          <div className="-mr-2 -my-2 md:hidden">
+          <div className="-my-2 -mr-2 md:hidden">
             <button
               type="button"
-              className="bg-white dark:bg-gray-900 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+              className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:bg-gray-900"
               onClick={toggleMenu}
             >
               <span className="sr-only">Open menu</span>
               {isOpen ? (
-                <X className="h-6 w-6" />
+                <X className="size-6" />
               ) : (
-                <MenuIcon className="h-6 w-6" />
+                <MenuIcon className="size-6" />
               )}
             </button>
           </div>
-          <nav className="hidden md:flex space-x-10">
+          <nav className="hidden space-x-10 md:flex">
             {menuItems.map((item) => (
               <Link
                 key={item.href}
@@ -83,7 +84,7 @@ const Navbar = ({ className }: { className?: string }) => {
               </Link>
             ))}
           </nav>
-          <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+          <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
             <Theme />
           </div>
         </div>
@@ -93,21 +94,21 @@ const Navbar = ({ className }: { className?: string }) => {
       <div
         className={`${
           isOpen ? "block" : "hidden"
-        } md:hidden absolute top-full left-0 w-full bg-white dark:bg-gray-900 shadow-lg`}
+        } absolute left-0 top-full w-full bg-white shadow-lg dark:bg-gray-900 md:hidden`}
       >
-        <div className="pt-2 pb-3 space-y-1">
+        <div className="space-y-1 pb-3 pt-2">
           {menuItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-700"
+              className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white"
               onClick={toggleMenu}
             >
               {item.label}
             </Link>
           ))}
         </div>
-        <div className="pt-4 pb-3 border-t border-gray-200 dark:border-gray-700">
+        <div className="border-t border-gray-200 pb-3 pt-4 dark:border-gray-700">
           <div className="flex items-center px-5">
             <Theme />
           </div>

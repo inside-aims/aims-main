@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
+import { useState } from "react";
+
 import { Select } from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
 
@@ -49,11 +50,11 @@ export default function PricingCalculator() {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="mt-16 bg-white shadow rounded-lg p-6"
+      className="mt-16 rounded-lg bg-white p-6 shadow"
     >
       <motion.h2
         variants={itemVariants}
-        className="text-3xl font-extrabold text-green-900 text-center mb-8"
+        className="mb-8 text-center text-3xl font-extrabold text-green-900"
       >
         Pricing Calculator
       </motion.h2>
@@ -61,7 +62,7 @@ export default function PricingCalculator() {
         <motion.div variants={itemVariants}>
           <label
             htmlFor="service"
-            className="block text-sm font-medium text-green-700 mb-1"
+            className="mb-1 block text-sm font-medium text-green-700"
           >
             Service
           </label>
@@ -80,7 +81,7 @@ export default function PricingCalculator() {
         <motion.div variants={itemVariants}>
           <label
             htmlFor="complexity"
-            className="block text-sm font-medium text-green-700 mb-1"
+            className="mb-1 block text-sm font-medium text-green-700"
           >
             Complexity
           </label>
@@ -101,7 +102,7 @@ export default function PricingCalculator() {
         <motion.div variants={itemVariants}>
           <label
             htmlFor="extras"
-            className="block text-sm font-medium text-green-700 mb-1"
+            className="mb-1 block text-sm font-medium text-green-700"
           >
             Extra Features
           </label>
@@ -128,7 +129,7 @@ export default function PricingCalculator() {
         </motion.div>
         <motion.div variants={itemVariants} className="mt-6 text-center">
           <motion.button
-            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+            className="inline-flex items-center rounded-md border border-transparent bg-green-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

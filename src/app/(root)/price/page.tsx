@@ -1,10 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import PricingCalculator from "@/components/hocs/Price/PricingCalculator";
+
+// import ComparisonGrid from "@/components/hocs/Price/ComparisonGrid";
+// import PricingCalculator from "@/components/hocs/Price/PricingCalculator";
 import PricingTiers from "@/components/hocs/Price/PricingTiers";
-import ServicePricing from "@/components/hocs/Price/ServicePricing";
-import ComparisonGrid from "@/components/hocs/Price/ComparisonGrid";
+// import ServicePricing from "@/components/hocs/Price/ServicePricing";
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -28,16 +29,16 @@ const itemVariants = {
 
 export default function PricingPage() {
   return (
-    <div className="py-16 px-4 sm:px-6 lg:px-8 min-h-screen">
+    <div className="min-h-screen px-4 py-16 sm:px-6 lg:px-8">
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="max-w-7xl mx-auto"
+        className="mx-auto max-w-7xl"
       >
         <motion.h1
           variants={itemVariants}
-          className="text-4xl font-extrabold text-green-900 text-center mb-12 mt-12"
+          className="my-12 text-center text-4xl font-extrabold text-green-900"
         >
           Web Dev Pricing Plans
         </motion.h1>
@@ -47,7 +48,7 @@ export default function PricingPage() {
 
         <motion.h1
           variants={itemVariants}
-          className="text-4xl font-extrabold text-green-900 text-center mb-12 mt-20"
+          className="mb-12 mt-20 text-center text-4xl font-extrabold text-green-900"
         >
           Mobile Apllication Dev Pricing Plans
         </motion.h1>
@@ -57,7 +58,7 @@ export default function PricingPage() {
 
         <motion.h1
           variants={itemVariants}
-          className="text-4xl font-extrabold text-green-900 text-center mb-12 mt-20"
+          className="mb-12 mt-20 text-center text-4xl font-extrabold text-green-900"
         >
           Mobile Apllication Dev Pricing Plans
         </motion.h1>
