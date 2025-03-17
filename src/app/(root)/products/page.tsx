@@ -2,7 +2,7 @@
 import ProductsShowcase from "@/components/hocs/Products/ProductsShowcase";
 export default function ProductsPage() {
   return (
-    <div className="min-h-screen text-white">
+    <div className="text-white">
       <ProductsShowcase />
     </div>
   );

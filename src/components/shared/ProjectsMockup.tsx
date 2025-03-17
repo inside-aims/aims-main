@@ -6,7 +6,7 @@ const ProjectsMockup = () => {
   return (
     <div className="relative col-span-6 mx-auto w-full max-w-md  md:col-span-3 lg:col-span-4">
       <motion.div
-        className="overflow-hidden rounded-lg bg-white shadow-2xl"
+        className="overflow-hidden rounded-sm bg-white shadow-2xl"
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
@@ -28,7 +28,7 @@ const ProjectsMockup = () => {
         </div>
       </motion.div>
       <motion.div
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500 px-4 py-2 font-semibold text-white"
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-sm bg-blue-500 px-4 py-2 font-semibold text-white"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ duration: 0.5, delay: 1 }}
@@ -37,7 +37,7 @@ const ProjectsMockup = () => {
       </motion.div>
 
       <motion.div
-        className="absolute left-[10%] top-1/4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-green-500 px-4 py-2 font-semibold text-white"
+        className="absolute left-[10%] top-1/4 -translate-x-1/2 -translate-y-1/2 rounded-sm bg-green-500 px-4 py-2 font-semibold text-white"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ duration: 0.5, delay: 1.5 }}

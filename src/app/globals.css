@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-  
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -288,8 +288,6 @@ body {
     @apply focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
   }
 
-
-
   .tab {
     @apply min-h-full dark:bg-dark-400 bg-light-800 text-light-500 dark:data-[state=active]:bg-dark-300 data-[state=active]:bg-primary-100 data-[state=active]:text-primary-500 !important;
   }
@@ -297,7 +295,7 @@ body {
   .dark-gradient {
     background: linear-gradient(
       90deg,
-       rgba(27, 31, 28, 0.41) 0%,
+      rgba(27, 31, 28, 0.41) 0%,
       rgba(9, 13, 10, 0.51) 40%,
       rgba(3, 8, 5, 0.7) 100%
     );

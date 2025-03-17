@@ -56,17 +56,21 @@ export default function ComparisonTable() {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
-        className="mx-auto max-w-7xl"
+        className="mx-auto max-w-7xl text-text-300"
       >
-        <h2 className="mb-12 text-center text-3xl font-bold">Compare Plans</h2>
-        <div className="overflow-x-auto">
+        <h2 className="mb-12 text-center text-3xl text-text-200 font-bold">
+          Compare Plans
+        </h2>
+        <div className="overflow-x-auto text-text-200">
           <table className="w-full border-collapse">
             <thead>
-              <tr className="border-b border-gray-800">
-                <th className="px-6 py-4 text-left">Features</th>
-                <th className="px-6 py-4 text-center">Free</th>
-                <th className="px-6 py-4 text-center">Standard</th>
-                <th className="px-6 py-4 text-center">Pro</th>
+              <tr className="border-b border-text-300">
+                <th className="px-6 py-4 text-left text-text-200">Features</th>
+                <th className="px-6 py-4 text-center text-text-200">Free</th>
+                <th className="px-6 py-4 text-center text-text-200">
+                  Standard
+                </th>
+                <th className="px-6 py-4 text-center text-text-200">Pro</th>
               </tr>
             </thead>
             <tbody>
@@ -77,7 +81,7 @@ export default function ComparisonTable() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="border-b border-gray-800"
+                  className="border-b border-gray-800 text-text-300"
                 >
                   <td className="px-6 py-4 text-gray-300">{feature.name}</td>
                   <td className="px-6 py-4 text-center">
@@ -85,10 +89,10 @@ export default function ComparisonTable() {
                       feature.free ? (
                         <Check className="mx-auto size-5 text-green-500" />
                       ) : (
-                        <X className="mx-auto size-5 text-gray-500" />
+                        <X className="mx-auto size-5 text-text-300" />
                       )
                     ) : (
-                      <span className="text-gray-300">{feature.free}</span>
+                      <span className="text-text-300">{feature.free}</span>
                     )}
                   </td>
                   <td className="px-6 py-4 text-center">
@@ -96,10 +100,10 @@ export default function ComparisonTable() {
                       feature.standard ? (
                         <Check className="mx-auto size-5 text-green-500" />
                       ) : (
-                        <X className="mx-auto size-5 text-gray-500" />
+                        <X className="mx-auto size-5 text-text-300" />
                       )
                     ) : (
-                      <span className="text-gray-300">{feature.standard}</span>
+                      <span className="text-text-300">{feature.standard}</span>
                     )}
                   </td>
                   <td className="px-6 py-4 text-center">
@@ -107,10 +111,10 @@ export default function ComparisonTable() {
                       feature.pro ? (
                         <Check className="mx-auto size-5 text-green-500" />
                       ) : (
-                        <X className="mx-auto size-5 text-gray-500" />
+                        <X className="mx-auto size-5 text-text-300" />
                       )
                     ) : (
-                      <span className="text-gray-300">{feature.pro}</span>
+                      <span className="text-text-300">{feature.pro}</span>
                     )}
                   </td>
                 </motion.tr>

@@ -25,7 +25,7 @@ const Layout = ({
       className={`min-h-screen ${
         resolvedTheme === "dark"
           ? "bg-[#121212] text-white"
-          : "bg-[#F0F5ED]/90 text-[#2F5233]"
+          : "bg-[#FDFAF6]/90 text-[#2F5233]"
       }`}
     >
       <div className="relative px-2 pb-10 pt-36 sm:px-5 lg:px-28">
@@ -53,3 +53,4 @@ const Layout = ({
 };
 
 export default Layout;
+// "bg-[#F0F5ED]/90 text-[#2F5233]"
