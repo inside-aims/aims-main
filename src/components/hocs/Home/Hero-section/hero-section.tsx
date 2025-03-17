@@ -13,12 +13,12 @@ export function HeroSectionAlternative() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className={`relative mx-4 mb-24 overflow-hidden rounded-3xl lg:mx-8 ${
+      className={`relative mx-4 mb-24 overflow-hidden rounded-sm lg:mx-8 ${
         isDarkMode ? "bg-[#243E28]" : "bg-text-200"
       }`}
     >
-      <div className="container mx-auto px-4 py-16 lg:py-24">
-        <div className="relative z-10 max-w-2xl">
+      <div className="container mx-auto px-16 py-16 lg:py-24">
+        <div className="relative z-10 max-w-2xl text-2xl font-light">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

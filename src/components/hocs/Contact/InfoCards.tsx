@@ -6,17 +6,18 @@ import { MapPin, Clock, Phone } from "lucide-react";
 const cards = [
   {
     title: "Office Location",
-    content: "123 Tech Avenue, Silicon Valley, CA 94000",
+    content:
+      "Koforidua Technical University, Koforidua - New Juabeng South EN - 1129988",
     icon: MapPin,
   },
   {
     title: "Working Hours",
-    content: "Monday - Friday: 9AM - 6PM",
+    content: "Monday - Saturday: 9AM - 6PM",
     icon: Clock,
   },
   {
     title: "Communication",
-    content: "+1 (555) 987-6543\ncontact@techcompany.com",
+    content: "+233 596285090\na.i.m.s582024@gmail.com",
     icon: Phone,
   },
 ];

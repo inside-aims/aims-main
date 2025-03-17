@@ -17,7 +17,7 @@ export function InclusionsSection() {
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       exit={{ opacity: 0, y: 50 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="mx-4 mb-24 overflow-hidden rounded-3xl bg-text-200 lg:mx-8"
+      className="mx-4 mb-24 overflow-hidden rounded-sm bg-text-200 lg:mx-8 px-10"
     >
       <div className="container relative mx-auto px-4 py-16">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
@@ -39,17 +39,14 @@ export function InclusionsSection() {
             </p>
 
             <Link href="/products">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
+              <div>
                 <Button
                   variant="secondary"
-                  className="mt-4 bg-text-100 text-text-200 hover:bg-opacity-80 transition-all"
+                  className="mt-4 bg-text-100 text-text-200 hover:bg-opacity-80 transition-all hover:scale-105"
                 >
                   View Products
                 </Button>
-              </motion.div>
+              </div>
             </Link>
           </motion.div>
 
@@ -58,7 +55,7 @@ export function InclusionsSection() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
-            className="relative h-[400px] overflow-hidden rounded-2xl"
+            className="relative h-[400px] overflow-hidden rounded-sm"
           >
             <Image
               src="/assets/images/image-3.jpg"

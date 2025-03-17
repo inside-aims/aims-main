@@ -66,7 +66,7 @@ const ServicesPage = () => {
         >
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-8">
             <div className="max-w-2xl">
-              <h1 className="text-3xl sm:text-4xl font-bold tracking-tight sm:text-6xl">
+              <h1 className="text-3xl font-bold tracking-tight sm:text-6xl">
                 <span className="block text-text-200">
                   Transform your ideas into
                 </span>
@@ -139,11 +139,11 @@ const ServicesPage = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-text-200 sm:text-4xl">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-text-200 ">
             Our Services
           </h2>
           <p className="mt-4 text-sm sm:text-base text-text-300">
-            Comprehensive solutions for your digital needs
+            Comprehensive solutions for your business needs
           </p>
         </motion.div>
 
@@ -190,10 +190,10 @@ const ServicesPage = () => {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-24 lg:px-8">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { label: "Projects Delivered", value: "500+" },
+              { label: "Projects Delivered", value: "72+" },
               { label: "Client Satisfaction", value: "99%" },
-              { label: "Team Members", value: "50+" },
-              { label: "Years Experience", value: "10+" },
+              { label: "Team Members", value: "10+" },
+              { label: "Years Experience", value: "3+" },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}

@@ -28,7 +28,7 @@ const InnovationSection: React.FC = () => {
       variants={fadeInUp}
       initial="initial"
       animate="animate"
-      className="mt-24 overflow-hidden bg-gradient-to-br from-text-100 via-[#6BA17A] to-text-200 dark:from-gray-900 dark:to-black"
+      className="mt-24 overflow-hidden bg-[#18230F] dark:from-gray-900 dark:to-black mb-[10rem] pt-10 px-10 rounded-sm"
     >
       <CardContent className="p-0">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-12">

@@ -20,7 +20,7 @@ export function DreamSection() {
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           exit={{ opacity: 0, x: -50 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative h-[300px] overflow-hidden rounded-2xl"
+          className="relative h-[300px] overflow-hidden rounded-sm"
         >
           <Image
             src="/assets/images/image-1.jpg"
@@ -64,8 +64,8 @@ export function DreamSection() {
 
           {/* Button */}
           <Link href="/contact">
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className="mt-8 bg-text-200 text-text-100 transition-all hover:bg-opacity-80">
+            <motion.div whileTap={{ scale: 0.95 }}>
+              <Button className="mt-8 bg-text-200 text-text-100 transition-all hover:bg-opacity-80 hover:scale-105 duration-150">
                 Get in touch
               </Button>
             </motion.div>
@@ -78,7 +78,7 @@ export function DreamSection() {
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           exit={{ opacity: 0, x: 50 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative h-[300px] overflow-hidden rounded-2xl"
+          className="relative h-[300px] overflow-hidden rounded-sm"
         >
           <Image
             src="/assets/images/image.jpg"
