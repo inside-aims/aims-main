@@ -1,11 +1,10 @@
+/* eslint-disable import/order */
 /* eslint-disable @typescript-eslint/no-require-imports */
 const { nextui } = require("@nextui-org/theme");
 const svgToDataUri = require("mini-svg-data-uri");
 
 // eslint-disable-next-line import/first
 import type { Config } from "tailwindcss";
-
-
 
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const {
@@ -33,13 +32,20 @@ export default {
     extend: {
       colors: {
         primary: {
-          "100": "#FFF1E6",
-          "500": "#FF7000",
+          "100": "#CCD5D2",
+          "500": "#2F5233",
+          gradient: "bg-gradient-to-r from-green-400 to-emerald-500 ",
         },
+        text: {
+          "100": "#F0F5ED",
+          "200": "#2F5233",
+          "300": "#333333",
+        },
+
         dark: {
           "100": "#000000",
           "200": "#0F1117",
-          "300": "#151821",
+          "300": "#243E28",
           "400": "#212734",
           "500": "#101012",
         },
@@ -116,6 +122,7 @@ export default {
 } satisfies Config;
 
 // This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function addVariablesForColors({ addBase, theme }: any) {
   const allColors = flattenColorPalette(theme("colors"));
   const newVars = Object.fromEntries(

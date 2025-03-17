@@ -1,142 +1,213 @@
 "use client";
 
-import { IconBrandYoutubeFilled } from "@tabler/icons-react";
+// import { IconBrandYoutubeFilled } from "@tabler/icons-react";
 import createGlobe from "cobe";
-import { motion } from "framer-motion";
+import { motion, useAnimation, useInView } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
-import React, { useEffect, useRef } from "react";
+import type React from "react";
+import { useEffect, useRef } from "react";
 
-import GradualSpacing from "@/components/ui/gradual-spacing";
 import { cn } from "@/lib/utils";
 
-import { SkeletonOne } from "./SkeletonOne";
+const GradualSpacing = ({
+  text,
+  className,
+}: {
+  text: string;
+  className?: string;
+}) => {
+  return (
+    <motion.h2
+      className={cn(
+        "text-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mt-0",
+        className
+      )}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
+      {text}
+    </motion.h2>
+  );
+};
 
 export default function FeaturedSection() {
+  const controls = useAnimation();
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
   const features = [
     {
       title: "Sharing with the community",
       description:
-        "Share your thoughts and experiences with milliions of users anonymously ",
+        "Share your thoughts and experiences with millions of users anonymously",
       skeleton: <SkeletonOne />,
       className:
-        "col-span-1 lg:col-span-4 border-b lg:border-r dark:border-neutral-800",
+        "col-span-1 md:col-span-2 lg:col-span-4 border-b md:border-r dark:border-neutral-800",
     },
     {
       title: "Gain Expert help",
       description:
         "Not only about connecting and having fun but also gaining expert help and advice.",
       skeleton: <SkeletonTwo />,
-      className: "border-b col-span-1 lg:col-span-2 dark:border-neutral-800",
+      className:
+        "border-b col-span-1 md:col-span-2 lg:col-span-2 dark:border-neutral-800",
     },
-    // {
-    //   title: "Watch our AI on YouTube",
-    //   description:
-    //     "Whether its you or Tyler Durden, can get to know about our product on YouTube",
-    //   skeleton: <SkeletonThree />,
-    //   className:
-    //     "col-span-1 lg:col-span-3 lg:border-r  dark:border-neutral-800",
-    // },
     {
       title: "Connecting diverse users around the world",
       description:
         "Build meaningful connections in a supportive, inclusive digital environment.",
       skeleton: <SkeletonFour />,
-      className: "col-span-1 lg:col-span-6 border-b lg:border-none",
+      className:
+        "col-span-1 md:col-span-2 lg:col-span-6 border-b md:border-none",
     },
   ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
-    <div className="relative z-20 mx-auto mb-20 max-w-7xl py-10 lg:py-40">
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={controls}
+      variants={containerVariants}
+      className="relative z-20 mx-auto mb-20 max-w-7xl"
+    >
       <div className="px-8">
         <GradualSpacing
-          className="mx-auto max-w-5xl text-center text-4xl font-medium tracking-tight text-black dark:text-white sm:text-3xl lg:text-5xl lg:leading-tight "
+          className="mx-auto max-w-5xl text-center text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl"
           text="Innovating Connections, Building Safe Spaces"
         />
 
-        <p className="mx-auto my-4  max-w-2xl text-center text-sm font-normal text-neutral-500 dark:text-neutral-400 lg:text-base">
+        <motion.p
+          variants={itemVariants}
+          className="mx-auto max-w-2xl text-center text-base sm:text-lg font-normal text-text-200 dark:text-neutral-300"
+        >
           At AIMS, we are dedicated to crafting groundbreaking solutions like
           Xolace to empower people, foster connections, and create spaces where
           everyone feels seen and heard. Our commitment to innovation drives
           everything we do.
-        </p>
+        </motion.p>
       </div>
 
-      <div className="relative">
-        <div className="mt-12 grid grid-cols-1 rounded-md dark:border-neutral-800 lg:grid-cols-6 xl:border">
-          {features.map((feature) => (
-            <FeatureCard key={feature.title} className={feature.className}>
+      <div className="relative mt-16">
+        <motion.div
+          variants={containerVariants}
+          className="grid grid-cols-1 gap-4 sm:gap-6 lg:gap-8 rounded-lg bg-text-200/5 p-4 sm:p-6 lg:p-8 backdrop-blur-lg dark:bg-black/5 md:grid-cols-2 lg:grid-cols-6"
+        >
+          {features.map((feature, index) => (
+            <FeatureCard
+              key={`${feature.title}${index}`}
+              className={feature.className}
+              variants={itemVariants}
+            >
               <FeatureTitle>{feature.title}</FeatureTitle>
               <FeatureDescription>{feature.description}</FeatureDescription>
-              <div className="size-full">{feature.skeleton}</div>
+              <div className="mt-6 size-full">{feature.skeleton}</div>
             </FeatureCard>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
-const FeatureCard = ({
-  children,
-  className,
-}: {
-  children?: React.ReactNode;
-  className?: string;
-}) => {
-  return (
-    <div className={cn(`p-4 sm:p-8 relative overflow-hidden`, className)}>
-      {children}
-    </div>
-  );
-};
+const FeatureCard = motion(
+  ({
+    children,
+    className,
+    variants,
+  }: {
+    children?: React.ReactNode;
+    className?: string;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    variants?: any;
+  }) => {
+    return (
+      <motion.div
+        variants={variants}
+        className={cn(
+          `overflow-hidden rounded-lg bg-text-100/5 p-4 sm:p-6 shadow-lg transition-all duration-300 hover:shadow-xl dark:bg-neutral-800`,
+          className
+        )}
+        whileHover={{ scale: 1.02 }}
+      >
+        {children}
+      </motion.div>
+    );
+  }
+);
 
 const FeatureTitle = ({ children }: { children?: React.ReactNode }) => {
   return (
-    <p className="mx-auto max-w-5xl text-left text-xl tracking-tight text-black dark:text-white md:text-2xl md:leading-snug">
+    <h3 className="mb-2 sm:mb-3 text-lg sm:text-xl font-semibold tracking-tight text-text-200 dark:text-white md:text-2xl">
       {children}
-    </p>
+    </h3>
   );
 };
 
 const FeatureDescription = ({ children }: { children?: React.ReactNode }) => {
   return (
-    <p
-      className={cn(
-        "text-sm md:text-base  max-w-4xl text-left mx-auto",
-        "text-neutral-500 text-center font-normal dark:text-neutral-300",
-        "text-left max-w-sm mx-0 md:text-sm my-2"
-      )}
-    >
+    <p className="text-xs sm:text-sm text-text-200 dark:text-neutral-300 md:text-base">
       {children}
     </p>
   );
 };
 
-export const SkeletonThree = () => {
+const SkeletonOne = () => {
   return (
-    <Link
-      href="https://www.youtube.com/watch?v=RPa3_AD1_Vs"
-      target="__blank"
-      className="group/image relative flex  h-full gap-10"
-    >
-      <div className="group  mx-auto size-full bg-transparent dark:bg-transparent">
-        <div className="relative flex size-full flex-1 flex-col space-y-2">
-          {/* TODO */}
-          <IconBrandYoutubeFilled className="absolute inset-0 z-10 m-auto size-20 text-red-500" />
-          <Image
-            src="https://assets.aceternity.com/fireship.jpg"
-            alt="header"
-            width={800}
-            height={800}
-            className="aspect-square size-full rounded-sm object-cover object-center blur-none transition-all duration-200 group-hover/image:blur-md"
-          />
-        </div>
-      </div>
-    </Link>
+    <div className="relative flex h-full items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-purple-500 to-blue-500">
+      <motion.div
+        className="absolute inset-0 z-10 flex items-center justify-center text-4xl font-bold text-white"
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        Community
+      </motion.div>
+      <motion.div
+        className="absolute inset-0"
+        initial={{ rotate: 0 }}
+        animate={{ rotate: 360 }}
+        transition={{
+          duration: 20,
+          repeat: Number.POSITIVE_INFINITY,
+          ease: "linear",
+        }}
+      >
+        <div className="size-full rounded-full border-4 border-white/30" />
+      </motion.div>
+    </div>
   );
 };
 
-export const SkeletonTwo = () => {
+const SkeletonTwo = () => {
   const images = [
     "https://images.unsplash.com/photo-1517322048670-4fba75cbbb62?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "https://images.unsplash.com/photo-1573790387438-4da905039392?q=80&w=3425&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -145,92 +216,80 @@ export const SkeletonTwo = () => {
     "https://images.unsplash.com/photo-1546484475-7f7bd55792da?q=80&w=2581&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   ];
 
-  const imageVariants = {
-    whileHover: {
-      scale: 1.1,
-      rotate: 0,
-      zIndex: 100,
-    },
-    whileTap: {
-      scale: 1.1,
-      rotate: 0,
-      zIndex: 100,
-    },
-  };
   return (
-    <div className="relative flex h-full flex-col items-start gap-10 overflow-hidden p-8">
-      {/* TODO */}
-      <div className="-ml-20 flex flex-row">
+    <div className="relative flex h-full flex-col items-start gap-4 overflow-hidden ">
+      <motion.div
+        className="flex flex-wrap justify-center gap-2"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+      >
         {images.map((image, idx) => (
           <motion.div
-            variants={imageVariants}
-            key={"images-first" + idx}
-            style={{
+            key={`image-${idx}`}
+            initial={{
+              opacity: 0,
+              scale: 0.8,
               rotate: Math.random() * 20 - 10,
             }}
-            whileHover="whileHover"
-            whileTap="whileTap"
-            className="-mr-4 mt-4 shrink-0 overflow-hidden rounded-xl border  border-slate-200 bg-white p-1  dark:border-slate-800 dark:bg-neutral-800"
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            transition={{ duration: 0.5, delay: idx * 0.1 }}
+            whileHover={{ scale: 1.05, zIndex: 1 }}
+            className="overflow-hidden rounded-lg shadow-md"
           >
             <Image
-              src={image}
-              alt="bali images"
-              width="500"
-              height="500"
-              className="size-20 shrink-0 rounded-lg object-cover md:size-40"
+              src={image || "/placeholder.svg"}
+              alt={`Expert help image ${idx + 1}`}
+              width={100}
+              height={100}
+              className="size-20 object-cover"
             />
           </motion.div>
         ))}
-      </div>
-      <div className="flex flex-row">
-        {images.map((image, idx) => (
-          <motion.div
-            key={"images-second" + idx}
-            style={{
-              rotate: Math.random() * 20 - 10,
-            }}
-            variants={imageVariants}
-            whileHover="whileHover"
-            whileTap="whileTap"
-            className="-mr-4 mt-4 shrink-0 overflow-hidden rounded-xl border  border-slate-200 bg-white p-1  dark:border-slate-800 dark:bg-neutral-800"
-          >
-            <Image
-              src={image}
-              alt="bali images"
-              width="500"
-              height="500"
-              className="size-20 shrink-0 rounded-lg object-cover md:size-40"
-            />
-          </motion.div>
-        ))}
-      </div>
-
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-[100] h-full w-20 bg-gradient-to-r from-white  to-transparent dark:from-black" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-[100] h-full w-20 bg-gradient-to-l  from-white to-transparent dark:from-black" />
+      </motion.div>
     </div>
   );
 };
 
-export const SkeletonFour = () => {
+const SkeletonFour = () => {
   return (
-    <div className="relative mt-10  flex h-60 flex-col items-center bg-transparent dark:bg-transparent md:h-60">
-      <Globe className="absolute -bottom-80 -right-10 md:-bottom-72 md:-right-10" />
+    <div className="relative mt-4 flex h-[300px] sm:h-[350px] md:h-[400px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-blue-400 to-purple-500">
+      <Globe className="absolute inset-0" />
+      <motion.div
+        className="z-10 text-center text-white"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5 }}
+      >
+        <h3 className="text-2xl font-bold">Global Connections</h3>
+        <p className="mt-2">Bringing the world together</p>
+      </motion.div>
     </div>
   );
 };
 
-export const Globe = ({ className }: { className?: string }) => {
+const Globe = ({ className }: { className?: string }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     let phi = 0;
 
+    const updateSize = () => {
+      const container = canvasRef.current?.parentElement;
+      if (container && canvasRef.current) {
+        canvasRef.current.width = container.clientWidth * 2;
+        canvasRef.current.height = container.clientHeight * 2;
+      }
+    };
+
     if (!canvasRef.current) return;
+
+    updateSize();
+    window.addEventListener("resize", updateSize);
 
     const globe = createGlobe(canvasRef.current, {
       devicePixelRatio: 2,
-      width: 600 * 2,
-      height: 600 * 2,
+      width: canvasRef.current.width,
+      height: canvasRef.current.height,
       phi: 0,
       theta: 0,
       dark: 1,
@@ -241,13 +300,10 @@ export const Globe = ({ className }: { className?: string }) => {
       markerColor: [0.1, 0.8, 1],
       glowColor: [1, 1, 1],
       markers: [
-        // longitude latitude
         { location: [37.7595, -122.4367], size: 0.03 },
         { location: [40.7128, -74.006], size: 0.1 },
       ],
       onRender: (state) => {
-        // Called on every animation frame.
-        // `state` will be an empty object, return updated params.
         state.phi = phi;
         phi += 0.01;
       },
@@ -255,13 +311,19 @@ export const Globe = ({ className }: { className?: string }) => {
 
     return () => {
       globe.destroy();
+      window.removeEventListener("resize", updateSize);
     };
   }, []);
 
   return (
     <canvas
       ref={canvasRef}
-      style={{ width: 600, height: 600, maxWidth: "100%", aspectRatio: 1 }}
+      style={{
+        width: "100%",
+        height: "100%",
+        maxWidth: "100%",
+        aspectRatio: "auto",
+      }}
       className={className}
     />
   );
