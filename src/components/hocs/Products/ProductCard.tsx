@@ -2,7 +2,7 @@
 
 import { motion, useTransform, type MotionValue } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import type { StaticImageData } from "next/image";
+// import type { StaticImageData } from "next/image";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,7 +11,7 @@ interface Product {
   name: string;
   tagline: string;
   description: string;
-  image: StaticImageData;
+  image: string;
   color: {
     accent: string;
     text: string;
