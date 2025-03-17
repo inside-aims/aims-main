@@ -52,7 +52,7 @@ const Navbar = ({ className }: { className?: string }) => {
               transition={{ delay: 0.2 }}
             >
               <Image
-                src="/assets/images/AIMS.png"
+                src="/assets/images/AIMS.webp"
                 width={60}
                 height={60}
                 alt="AIMS logo"
