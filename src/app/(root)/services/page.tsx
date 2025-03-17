@@ -115,7 +115,7 @@ const ServicesPage = () => {
               >
                 <div className="absolute right-0 top-0 h-[250px] sm:h-[350px] lg:h-[500px] w-[200px] sm:w-[250px] lg:w-[300px] rounded-xl bg-gradient-to-br from-green-400/20 to-emerald-500/20 backdrop-blur-3xl" />
                 <Image
-                  src="/assets/images/services.jpg"
+                  src="/assets/images/services.webp"
                   alt="Interface mockup"
                   width={400}
                   height={600}

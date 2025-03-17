@@ -59,7 +59,7 @@ export function InclusionsSection() {
             className="relative h-[400px] overflow-hidden rounded-sm"
           >
             <Image
-              src="/assets/images/image-3.jpg"
+              src="/assets/images/image-3.webp"
               alt="Luxury kitchen interior"
               fill
               className="object-cover"

@@ -57,7 +57,7 @@ export function HeroSectionAlternative() {
         aria-hidden="true"
       >
         <Image
-          src="/assets/images/image-2.jpg"
+          src="/assets/images/image-2.webp"
           alt="Modern building facade"
           width={800}
           height={600}

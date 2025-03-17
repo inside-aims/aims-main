@@ -23,7 +23,7 @@ export function DreamSection() {
           className="relative h-[300px] overflow-hidden rounded-sm"
         >
           <Image
-            src="/assets/images/image-1.jpg"
+            src="/assets/images/image-1.webp"
             alt="Modern house exterior showcasing innovation"
             fill
             className="object-cover"
@@ -81,7 +81,7 @@ export function DreamSection() {
           className="relative h-[300px] overflow-hidden rounded-sm"
         >
           <Image
-            src="/assets/images/image.jpg"
+            src="/assets/images/image.webp"
             alt="Advanced technology concept image"
             fill
             className="object-cover"
