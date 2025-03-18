@@ -2,9 +2,8 @@
 
 import { useTheme } from "next-themes";
 import React, { useEffect, useState } from "react";
-
-import Footer from "@/components/hocs/Contact/Footer";
 import Navbar from "@/components/shared/navigation/acert-navbar";
+import Footer from "@/components/hocs/Contact/Footer";
 import Particles from "@/components/ui/particles";
 
 const Layout = ({
@@ -28,7 +27,7 @@ const Layout = ({
           : "bg-[#FDFAF6]/90 text-[#2F5233]"
       }`}
     >
-      <div className="relative px-2 pb-10 pt-36 sm:px-5 lg:px-28">
+      <div className="relative px-5 pt-36 lg:px-28 font-montserrat">
         <Navbar />
         <div
           className={`relative z-10 ${
