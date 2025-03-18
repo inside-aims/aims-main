@@ -30,12 +30,17 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        montserrat: ["Montserrat", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+      },
       colors: {
         primary: {
           "100": "#CCD5D2",
           "500": "#2F5233",
           gradient: "bg-gradient-to-r from-green-400 to-emerald-500 ",
         },
+
         text: {
           "100": "#F0F5ED",
           "200": "#2F5233",

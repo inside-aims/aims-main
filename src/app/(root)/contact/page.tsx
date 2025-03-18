@@ -4,7 +4,7 @@ import InfoCards from "@/components/hocs/Contact/InfoCards";
 
 export default function ContactPage() {
   return (
-    <div className="font-sans text-white">
+    <div className="font-sans text-white min-h-screen">
       <HeroSection />
       <InfoCards />
       <ContactForm />
