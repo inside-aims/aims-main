@@ -205,7 +205,7 @@ export default function PricingPage() {
   );
 
   return (
-    <div className=" px-4 py-20  text-white">
+    <div className=" px-4 py-20  text-white min-h-screen">
       <div className="mx-auto max-w-6xl space-y-12">
         <PricingNavigation
           activeSection={activeSection}

@@ -28,7 +28,7 @@ const Layout = ({
           : "bg-[#FDFAF6]/90 text-[#2F5233]"
       }`}
     >
-      <div className="relative px-2 pb-10 pt-36 sm:px-5 lg:px-28">
+      <div className="relative px-5 pt-36 font-montserrat lg:px-28">
         <Navbar />
         <div
           className={`relative z-10 ${
