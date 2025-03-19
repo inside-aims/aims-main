@@ -13,7 +13,7 @@ export function DreamSection() {
 
   return (
     <div ref={sectionRef} className="container mx-auto px-4 py-24">
-      <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-3">
+      <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-1">
         {/* Left Image */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}

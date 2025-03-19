@@ -13,18 +13,18 @@ export function HeroSectionAlternative() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className={`relative mx-4 mb-24 overflow-hidden rounded-sm lg:mx-8 ${
-        isDarkMode ? "bg-[#243E28]" : "bg-text-200"
+      className={`relative mx-4 md:mb-24 overflow-hidden rounded-sm lg:mx-8 md:bg-text-200 ${
+        isDarkMode ? "md:bg-[#243E28]" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-16 py-16 lg:py-24">
-        <div className="relative z-10 max-w-2xl text-2xl font-light">
+      <div className="container mx-auto md:px-0 lg:px-16 md:py-16 lg:py-24">
+        <div className="relative z-10 max-w-2xl right-0 text-2xl font-light">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className={`mb-4 font-serif ${
-              isDarkMode ? "text-[#fde6d8]" : "text-text-100"
+            className={`mb-4 font-serif md:text-white ${
+              isDarkMode ? "text-[#fde6d8]" : "text-black"
             }`}
           >
             Atlas Innovation and Meta Solutions
@@ -37,9 +37,9 @@ export function HeroSectionAlternative() {
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.5 + i * 0.2 }}
-                className={`mb-2 font-serif text-4xl lg:text-5xl ${
+                className={`mb-2 font-serif text-4xl lg:text-5xl md:text-white ${
                   i === 1 ? "italic" : ""
-                } ${isDarkMode ? "text-[#e4a576]" : "text-text-100"}`}
+                } ${isDarkMode ? "text-[#e4a576]" : "text-black"}`}
               >
                 {text}
               </motion.h1>
@@ -61,7 +61,7 @@ export function HeroSectionAlternative() {
           alt="Modern building facade"
           width={800}
           height={600}
-          className="size-full object-cover"
+          className="hidden md:block size-full object-cover"
           priority
         />
       </motion.div>
