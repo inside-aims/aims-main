@@ -56,7 +56,7 @@ export function InclusionsSection() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
-            className="relative h-[400px] overflow-hidden rounded-sm"
+            className="relative h-[400px] overflow-hidden rounded-sm hidden md:block"
           >
             <Image
               src="/assets/images/image-3.webp"
